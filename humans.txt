@@ -1,0 +1,33 @@
+/* TEAM */
+
+Founder & Part-Time Finance Director:
+  Phil Southern
+  Fellow of CIMA (FCMA)
+  Location: West Yorkshire, UK
+
+Web Design:
+  TPS (tpstores.co.uk)
+  Location: UK
+
+/* SITE */
+
+Last update: December 2025
+Language: English (British)
+Doctype: HTML5
+Standards: WCAG 2.1 AA, Schema.org
+Animation: AOS (Animate On Scroll)
+
+/* THANKS */
+
+Google Fonts - fonts.google.com
+AOS Library - michalsnik.github.io/aos
+
+/* ABOUT RESULTS DRIVEN */
+
+Established: 2014
+Services: Part-Time Finance Director, Operations Director, Independent Director
+Specialisms: EMI Schemes, Employee Ownership Trusts, Acquisitions, Business Planning
+Client Turnover: £2m to £20m+
+Sectors: Manufacturing, Distribution, Wholesale, Retail, Professional Services
+
+"Results driven people add value"

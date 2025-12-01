@@ -1,0 +1,16 @@
+# Robots.txt for Results Driven
+# https://www.resultsdriven.co.uk
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.resultsdriven.co.uk/sitemap.xml
+
+# Disallow admin/private directories if any
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+
+# Crawl-delay for politeness (optional)
+Crawl-delay: 1
