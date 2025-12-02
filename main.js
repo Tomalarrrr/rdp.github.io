@@ -1,385 +1,300 @@
-/**
- * Results Driven - Main JavaScript
- * Modernized with privacy protection for contact information
- */
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
 
+/**
+* Template Name: Presento - v3.9.0
+* Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
 (function() {
   "use strict";
 
-  // ===========================================
-  // PRIVACY PROTECTION - Contact Info Obfuscation
-  // ===========================================
-  
-  /**
-   * Decode obfuscated contact information
-   * This prevents bots from easily scraping email/phone
-   */
-  const ContactProtection = {
-    // ROT13-style encoding for basic obfuscation
-    decode: function(encoded) {
-      return encoded.split('').map(char => {
-        const code = char.charCodeAt(0);
-        if (code >= 65 && code <= 90) {
-          return String.fromCharCode(((code - 65 + 13) % 26) + 65);
-        } else if (code >= 97 && code <= 122) {
-          return String.fromCharCode(((code - 97 + 13) % 26) + 97);
-        }
-        return char;
-      }).join('');
-    },
-    
-    // Encoded contact details (ROT13 encoded)
-    // Original: phil@resultsdriven.co.uk -> encoded
-    // Original: 07812105882 -> stored as parts
-    getEmail: function() {
-      const parts = ['cuvy', '@', 'erfhygfqevira', '.pb.hx'];
-      return parts.map(p => this.decode(p)).join('');
-    },
-    
-    getPhone: function() {
-      // Store as array of number parts to prevent simple scraping
-      const parts = ['078', '121', '058', '82'];
-      return parts.join('');
-    },
-    
-    // Initialize contact links after page load
-    init: function() {
-      const emailContainer = document.querySelector('#email-contact');
-      const phoneContainer = document.querySelector('#phone-contact');
-      
-      if (emailContainer) {
-        const email = this.getEmail();
-        const contactInfo = emailContainer.querySelector('.contact-info');
-        if (contactInfo) {
-          const link = document.createElement('a');
-          link.href = 'mailto:' + email;
-          link.textContent = email;
-          link.setAttribute('aria-label', 'Send email');
-          contactInfo.appendChild(link);
-        }
-        
-        // Make the whole card clickable
-        emailContainer.addEventListener('click', function() {
-          window.location.href = 'mailto:' + email;
-        });
-      }
-      
-      if (phoneContainer) {
-        const phone = this.getPhone();
-        const formattedPhone = phone.replace(/(\d{5})(\d{6})/, '$1 $2');
-        const contactInfo = phoneContainer.querySelector('.contact-info');
-        if (contactInfo) {
-          const link = document.createElement('a');
-          link.href = 'tel:' + phone;
-          link.textContent = formattedPhone;
-          link.setAttribute('aria-label', 'Call phone number');
-          contactInfo.appendChild(link);
-        }
-        
-        // Make the whole card clickable
-        phoneContainer.addEventListener('click', function() {
-          window.location.href = 'tel:' + phone;
-        });
-      }
-    }
-  };
-
-  // ===========================================
-  // UTILITY FUNCTIONS
-  // ===========================================
-  
   /**
    * Easy selector helper function
    */
   const select = (el, all = false) => {
-    el = el.trim();
+    el = el.trim()
     if (all) {
-      return [...document.querySelectorAll(el)];
+      return [...document.querySelectorAll(el)]
     } else {
-      return document.querySelector(el);
+      return document.querySelector(el)
     }
-  };
+  }
 
   /**
    * Easy event listener function
    */
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all);
+    let selectEl = select(el, all)
     if (selectEl) {
       if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener));
+        selectEl.forEach(e => e.addEventListener(type, listener))
       } else {
-        selectEl.addEventListener(type, listener);
+        selectEl.addEventListener(type, listener)
       }
     }
-  };
+  }
 
   /**
-   * Easy on scroll event listener
+   * Easy on scroll event listener 
    */
   const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener);
-  };
-
-  // ===========================================
-  // HEADER & NAVIGATION
-  // ===========================================
-
-  /**
-   * Toggle header scrolled class
-   */
-  const selectHeader = select('#header');
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled');
-      } else {
-        selectHeader.classList.remove('header-scrolled');
-      }
-    };
-    window.addEventListener('load', headerScrolled);
-    onscroll(document, headerScrolled);
+    el.addEventListener('scroll', listener)
   }
 
   /**
    * Navbar links active state on scroll
    */
-  const navbarlinks = select('#navbar .scrollto', true);
+  let navbarlinks = select('#navbar .scrollto', true)
   const navbarlinksActive = () => {
-    const position = window.scrollY + 200;
+    let position = window.scrollY + 200
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return;
-      const section = select(navbarlink.hash);
-      if (!section) return;
+      if (!navbarlink.hash) return
+      let section = select(navbarlink.hash)
+      if (!section) return
       if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active');
+        navbarlink.classList.add('active')
       } else {
-        navbarlink.classList.remove('active');
+        navbarlink.classList.remove('active')
       }
-    });
-  };
-  window.addEventListener('load', navbarlinksActive);
-  onscroll(document, navbarlinksActive);
-
-  /**
-   * Mobile navigation toggle
-   */
-  const mobileNavToggle = select('.mobile-nav-toggle');
-  const navbar = select('.navbar');
-  
-  if (mobileNavToggle) {
-    mobileNavToggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      navbar.classList.toggle('active');
-      this.classList.toggle('active');
-      this.setAttribute('aria-expanded', navbar.classList.contains('active'));
-      
-      // Toggle overlay
-      let overlay = select('.nav-overlay');
-      if (!overlay) {
-        overlay = document.createElement('div');
-        overlay.className = 'nav-overlay';
-        document.body.appendChild(overlay);
-        overlay.addEventListener('click', closeNavbar);
-      }
-      overlay.classList.toggle('active');
-    });
+    })
   }
-  
-  function closeNavbar() {
-    if (navbar) navbar.classList.remove('active');
-    if (mobileNavToggle) {
-      mobileNavToggle.classList.remove('active');
-      mobileNavToggle.setAttribute('aria-expanded', 'false');
-    }
-    const overlay = select('.nav-overlay');
-    if (overlay) overlay.classList.remove('active');
-  }
-
-  // Close mobile nav on link click
-  on('click', '.navbar .nav-link', function(e) {
-    closeNavbar();
-  }, true);
-
-  // ===========================================
-  // SMOOTH SCROLLING
-  // ===========================================
+  window.addEventListener('load', navbarlinksActive)
+  onscroll(document, navbarlinksActive)
 
   /**
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
-    const header = select('#header');
-    const offset = header ? header.offsetHeight : 0;
-    const element = select(el);
-    
-    if (!element) return;
-    
-    const elementPos = element.offsetTop;
+    let header = select('#header')
+    let offset = header.offsetHeight
+
+    if (!header.classList.contains('header-scrolled')) {
+      offset -= 16
+    }
+
+    let elementPos = select(el).offsetTop
     window.scrollTo({
-      top: elementPos - offset - 20,
+      top: elementPos - offset,
       behavior: 'smooth'
-    });
-  };
+    })
+  }
 
   /**
-   * Scroll with offset on links with .scrollto class
+   * Toggle .header-scrolled class to #header when page is scrolled
+   */
+  let selectHeader = select('#header')
+  if (selectHeader) {
+    const headerScrolled = () => {
+      if (window.scrollY > 100) {
+        selectHeader.classList.add('header-scrolled')
+      } else {
+        selectHeader.classList.remove('header-scrolled')
+      }
+    }
+    window.addEventListener('load', headerScrolled)
+    onscroll(document, headerScrolled)
+  }
+
+  /**
+   * Back to top button
+   */
+  let backtotop = select('.back-to-top')
+  if (backtotop) {
+    const toggleBacktotop = () => {
+      if (window.scrollY > 100) {
+        backtotop.classList.add('active')
+      } else {
+        backtotop.classList.remove('active')
+      }
+    }
+    window.addEventListener('load', toggleBacktotop)
+    onscroll(document, toggleBacktotop)
+  }
+
+  /**
+   * Mobile nav toggle
+   */
+  on('click', '.mobile-nav-toggle', function(e) {
+    select('#navbar').classList.toggle('navbar-mobile')
+    this.classList.toggle('bi-list')
+    this.classList.toggle('bi-x')
+  })
+
+  /**
+   * Mobile nav dropdowns activate
+   */
+  on('click', '.navbar .dropdown > a', function(e) {
+    if (select('#navbar').classList.contains('navbar-mobile')) {
+      e.preventDefault()
+      this.nextElementSibling.classList.toggle('dropdown-active')
+    }
+  }, true)
+
+  /**
+   * Scrool with ofset on links with a class name .scrollto
    */
   on('click', '.scrollto', function(e) {
     if (select(this.hash)) {
-      e.preventDefault();
-      scrollto(this.hash);
+      e.preventDefault()
+
+      let navbar = select('#navbar')
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile')
+        let navbarToggle = select('.mobile-nav-toggle')
+        navbarToggle.classList.toggle('bi-list')
+        navbarToggle.classList.toggle('bi-x')
+      }
+      scrollto(this.hash)
     }
-  }, true);
+  }, true)
 
   /**
-   * Scroll with offset on page load with hash links in the url
+   * Scroll with ofset on page load with hash links in the url
    */
   window.addEventListener('load', () => {
     if (window.location.hash) {
       if (select(window.location.hash)) {
-        scrollto(window.location.hash);
+        scrollto(window.location.hash)
+      }
+    }
+  });
+  /**
+   * Clients Slider
+   */
+  new Swiper('.clients-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 2,
+        spaceBetween: 40
+      },
+      480: {
+        slidesPerView: 3,
+        spaceBetween: 60
+      },
+      640: {
+        slidesPerView: 4,
+        spaceBetween: 80
+      },
+      992: {
+        slidesPerView: 6,
+        spaceBetween: 120
       }
     }
   });
 
-  // ===========================================
-  // BACK TO TOP BUTTON
-  // ===========================================
-
-  const backtotop = select('.back-to-top');
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active');
-      } else {
-        backtotop.classList.remove('active');
-      }
-    };
-    window.addEventListener('load', toggleBacktotop);
-    onscroll(document, toggleBacktotop);
-    
-    backtotop.addEventListener('click', function(e) {
-      e.preventDefault();
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-
-  // ===========================================
-  // FOOTER YEAR
-  // ===========================================
-  
-  const yearElement = select('#current-year');
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
-  }
-
-  // ===========================================
-  // EXTERNAL LIBRARY INITIALIZATION
-  // ===========================================
-
   /**
-   * Animation on scroll (AOS)
+   * Porfolio isotope and filter
    */
   window.addEventListener('load', () => {
-    if (typeof AOS !== 'undefined') {
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false,
-        offset: 50
+    let portfolioContainer = select('.portfolio-container');
+    if (portfolioContainer) {
+      let portfolioIsotope = new Isotope(portfolioContainer, {
+        itemSelector: '.portfolio-item',
+        layoutMode: 'fitRows'
       });
-    }
-  });
 
-  /**
-   * PureCounter initialization
-   */
-  window.addEventListener('load', () => {
-    if (typeof PureCounter !== 'undefined') {
-      new PureCounter();
-    }
-  });
+      let portfolioFilters = select('#portfolio-flters li', true);
 
-  /**
-   * GLightbox initialization
-   */
-  window.addEventListener('load', () => {
-    if (typeof GLightbox !== 'undefined') {
-      GLightbox({
-        selector: '.glightbox'
-      });
-    }
-  });
-
-  // ===========================================
-  // INITIALIZE ON DOM READY
-  // ===========================================
-
-  document.addEventListener('DOMContentLoaded', function() {
-    // Initialize contact protection (obfuscated email/phone)
-    ContactProtection.init();
-    
-    // Set current year in footer
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-      yearElement.textContent = new Date().getFullYear();
-    }
-  });
-
-  // ===========================================
-  // PERFORMANCE: Lazy Loading Images
-  // ===========================================
-  
-  if ('IntersectionObserver' in window) {
-    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-    
-    const imageObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          if (img.dataset.src) {
-            img.src = img.dataset.src;
-            img.removeAttribute('data-src');
-          }
-          observer.unobserve(img);
-        }
-      });
-    });
-    
-    lazyImages.forEach(img => {
-      imageObserver.observe(img);
-    });
-  }
-
-  // ===========================================
-  // ACCESSIBILITY: Keyboard Navigation
-  // ===========================================
-  
-  // Handle keyboard navigation for interactive elements
-  document.addEventListener('keydown', function(e) {
-    // ESC key closes mobile nav
-    if (e.key === 'Escape') {
-      closeNavbar();
-    }
-  });
-
-  // Ensure contact cards are keyboard accessible
-  const contactCards = select('.contact-card', true);
-  contactCards.forEach(card => {
-    card.setAttribute('tabindex', '0');
-    card.setAttribute('role', 'button');
-    
-    card.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
+      on('click', '#portfolio-flters li', function(e) {
         e.preventDefault();
-        this.click();
-      }
-    });
+        portfolioFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        portfolioIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+        portfolioIsotope.on('arrangeComplete', function() {
+          AOS.refresh()
+        });
+      }, true);
+    }
+
   });
 
-})();
+  /**
+   * Initiate portfolio lightbox 
+   */
+  const portfolioLightbox = GLightbox({
+    selector: '.portfolio-lightbox'
+  });
+
+  /**
+   * Portfolio details slider
+   */
+  new Swiper('.portfolio-details-slider', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  /**
+   * Testimonials slider
+   */
+  new Swiper('.testimonials-slider', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
+      },
+
+      1200: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      }
+    }
+  });
+
+  /**
+   * Animation on scroll
+   */
+  window.addEventListener('load', () => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    })
+  });
+
+  /**
+   * Initiate Pure Counter 
+   */
+  new PureCounter();
+
+})()
