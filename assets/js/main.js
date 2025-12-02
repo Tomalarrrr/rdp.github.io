@@ -1,15 +1,12 @@
+document.cookie = "cookies=none";
+document.cookie = "sameSite=strict";
+
 /**
 * Template Name: Presento - v3.9.0
 * Template URL: https://bootstrapmade.com/presento-bootstrap-corporate-template/
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-
-
-document.cookie = "cookies=none";
-document.cookie = "sameSite=strict";
-
-
 (function() {
   "use strict";
 
