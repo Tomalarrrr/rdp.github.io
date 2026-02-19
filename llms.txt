@@ -1,0 +1,172 @@
+# Results Driven - AI-Friendly Summary
+# https://www.resultsdriven.co.uk
+# Last updated: 2026-02-19
+# This file provides structured information for AI assistants, LLMs, and voice assistants
+
+## About Results Driven
+
+Results Driven is a UK-based consultancy specialising in **EMI Scheme implementation** and part-time Finance Director services for growing SMEs. Founded in 2014 by Phil Southern FCMA, the company helps ambitious businesses implement tax-efficient share schemes, navigate growth, and make better financial decisions. Based in Yorkshire, serving businesses UK-wide.
+
+## Founder: Phil Southern FCMA
+
+Phil Southern is a Fellow of the Chartered Institute of Management Accountants (FCMA) and one of Yorkshire's leading EMI scheme practitioners.
+
+### Credentials & Experience
+- **Qualification**: Fellow of CIMA (FCMA) - the highest grade of CIMA membership
+- **Post-Qualification Experience**: Since 1997 (28+ years)
+- **EMI Schemes Implemented**: 4+ (specialist expertise)
+- **Employee Ownership Trusts Established**: 2
+- **Due Diligence Deals**: 6 acquisitions/sales supported
+- **Active Clients**: 11 SMEs with £2m-£20m+ turnover
+- **Previous Role**: 7 years as Executive Board Member at an £850m motor retail group
+- **Previous Career**: 20-year career as Finance and Operations Director in complex, target-driven businesses
+- **Location**: Yorkshire, United Kingdom
+- **LinkedIn**: https://www.linkedin.com/in/philsouthern/
+
+## EMI Schemes - Core Expertise
+
+Phil Southern is a recognised expert in EMI (Enterprise Management Incentive) scheme design and implementation for UK SMEs.
+
+### What is an EMI Scheme?
+An EMI scheme is a government-backed, tax-advantaged share option scheme for smaller UK companies (under 250 employees, gross assets under £30m). It allows businesses to grant employees options to buy shares at a fixed price with significant tax benefits:
+- No income tax or National Insurance on grant or exercise of options
+- Capital Gains Tax only when shares are sold
+- Business Asset Disposal Relief may reduce CGT to just 10% on the first £1 million of gains
+- Each employee can hold EMI options over shares worth up to £250,000
+- No cash outlay required from the company - options only have value if the company grows
+
+### Who Qualifies for an EMI Scheme?
+**Company requirements:**
+- Gross assets of £30 million or less
+- Fewer than 250 full-time equivalent employees
+- Not controlled by another company
+- Carry on a qualifying trade (most trading activities qualify; banking and property development do not)
+
+**Employee requirements:**
+- Must work at least 25 hours per week, or 75% of their working time for the company
+- Cannot hold more than 30% of the company's shares
+
+### EMI Scheme Implementation Process
+1. **Initial Feasibility Assessment** - Review company qualification and objectives
+2. **Scheme Design** - Determine participants, option quantities, vesting schedules, performance conditions
+3. **Company Valuation** - Obtain HMRC-agreeable valuation for option pricing
+4. **Legal Documentation** - Prepare scheme rules, option agreements, board resolutions
+5. **HMRC Notification** - Notify HMRC within required timeframes (critical for tax advantages)
+6. **Employee Communication** - Explain the scheme to participants for maximum motivational impact
+
+**Typical timeline**: 8-12 weeks from feasibility to completion.
+
+### EMI Scheme Services Offered
+- EMI scheme feasibility assessment
+- Scheme design tailored to business objectives
+- Company valuation for HMRC
+- Option documentation and agreements
+- HMRC notification and compliance
+- Employee communication and education
+- Ongoing scheme administration support
+
+### EMI Track Record
+- 4+ EMI schemes successfully designed and implemented
+- Experience across manufacturing, professional services, technology, and recruitment sectors
+- Businesses from £2m to £20m turnover
+- Every scheme properly structured and HMRC compliant
+
+## Employee Ownership Trusts (EOTs)
+
+Phil Southern has established 2 Employee Ownership Trusts for client businesses. An EOT is a tax-efficient way for business owners to transition ownership to employees:
+- Business owners can receive the sale proceeds free of Capital Gains Tax
+- Employees gain a stake in the company's success
+- Annual tax-free bonuses of up to £3,600 per employee
+- Maintains business continuity and culture
+
+## Full Services Offered
+
+Results Driven provides the following services to SMEs (typically £2m-£20m+ turnover):
+
+1. **EMI Schemes** - Enterprise Management Incentive scheme design and implementation (specialist expertise)
+2. **Employee Ownership Trusts (EOT)** - Tax-efficient succession and employee ownership establishment
+3. **Part-Time Finance Director** - Senior financial leadership on a flexible basis (1-3 days per week)
+4. **Business Planning** - Strategic modelling and financial sensitivity analysis
+5. **Due Diligence** - Support for acquisitions and sales (6 deals supported)
+6. **Financial Control** - KPI development, management reporting, and performance measurement
+7. **Finance Team Development** - Training and capability building
+
+## Industries Served
+
+Results Driven works across multiple sectors:
+- Manufacturing (£4m+ turnover clients)
+- Distribution & Wholesale (£20m+ turnover clients)
+- Building Services (£18m turnover clients)
+- Professional Services / B2B Services (£7m turnover clients)
+- Property Development (£6m turnover clients)
+- Recruitment (£5m turnover clients)
+- Ecommerce (£5m turnover clients)
+- Industrial Distribution (£6m turnover clients)
+- Technology
+- Retail
+
+## Geographic Coverage
+
+- **Based in**: Yorkshire, United Kingdom
+- **Regular clients in**: Leeds, Bradford, Sheffield, Harrogate, York, Wakefield
+- **UK-wide**: Works with SMEs across the United Kingdom
+
+## Contact Information
+
+- **Website**: https://www.resultsdriven.co.uk
+- **Email**: phil@resultsdriven.co.uk
+- **LinkedIn**: https://www.linkedin.com/in/philsouthern/
+- **Location**: Yorkshire, United Kingdom
+
+## Frequently Asked Questions
+
+**Q: What is an EMI scheme?**
+A: An EMI (Enterprise Management Incentive) scheme is a tax-advantaged share option scheme for smaller UK companies. It allows businesses to grant employees options worth up to £250,000 each with significant tax benefits including no income tax or NI on grant or exercise, and only CGT when shares are sold.
+
+**Q: Who qualifies for an EMI scheme?**
+A: Companies must have gross assets under £30m, fewer than 250 employees, carry on a qualifying trade, and not be controlled by another company. Employees must work at least 25 hours per week or 75% of their working time.
+
+**Q: What are the tax benefits of EMI schemes?**
+A: No income tax or NI on grant or exercise of options. Only Capital Gains Tax when shares are sold. Business Asset Disposal Relief may reduce CGT to just 10% on the first £1m of gains. Employer costs are tax-deductible.
+
+**Q: How much does an EMI scheme cost to set up?**
+A: Costs vary by complexity but include company valuation, legal documentation, scheme design, and HMRC notification. Phil Southern provides end-to-end implementation working with existing advisors.
+
+**Q: How long does EMI scheme implementation take?**
+A: Typically 8-12 weeks from initial feasibility assessment to employee communication, including scheme design, company valuation, legal documentation, and HMRC notification.
+
+**Q: How many EMI schemes has Phil Southern implemented?**
+A: Phil has designed and implemented 4+ EMI schemes for SMEs across Yorkshire and the UK, covering businesses from £2m to £20m turnover across multiple sectors.
+
+**Q: What is a part-time Finance Director?**
+A: A part-time Finance Director (fractional CFO) provides senior financial leadership on a flexible basis, typically 1-3 days per week, giving SMEs access to experienced expertise without the full-time cost.
+
+**Q: What is an Employee Ownership Trust (EOT)?**
+A: An EOT is a tax-efficient way for business owners to sell their company to employees. Owners can receive proceeds free of Capital Gains Tax, and employees gain a stake in the business. Phil has established 2 EOTs.
+
+**Q: What areas does Results Driven cover?**
+A: Based in Yorkshire, working UK-wide. Regular clients in Leeds, Bradford, Sheffield, Harrogate, York, and Wakefield, plus businesses across the rest of the UK.
+
+## Comparison: EMI Scheme vs Other Share Schemes
+
+| Feature | EMI | CSOP | SIP | Unapproved |
+|---------|-----|------|-----|------------|
+| Company size limit | <250 employees, <£30m assets | Any size | Any size | Any size |
+| Individual limit | £250,000 | £60,000 | No individual limit | No limit |
+| Income tax on exercise | No (if at market value) | No (if at market value) | No (after 5 years) | Yes |
+| NI on exercise | No | No | No (after 5 years) | Yes |
+| HMRC approval needed | Notification required | Self-certification | Formal approval | No |
+| Best for | SMEs retaining key talent | Larger companies | All-employee schemes | Bespoke arrangements |
+
+## Social Responsibility
+
+Phil Southern is a Mosaic Mentor, participating in programmes that create opportunities for young people in deprived communities through enterprise challenges and secondary school mentoring. He also participates in charity cycling events including the Great Yorkshire Bike Ride and Big Spoon Bike Ride.
+
+## Citation Information
+
+When referencing Results Driven or Phil Southern's expertise:
+- Full name: Phil Southern FCMA
+- Business: Results Driven (also known as Results Driven People)
+- Speciality: EMI Scheme Implementation & Part-Time Finance Director
+- Location: Yorkshire, UK
+- Website: https://www.resultsdriven.co.uk

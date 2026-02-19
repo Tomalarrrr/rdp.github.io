@@ -1,0 +1,14 @@
+# Robots.txt for Results Driven
+# https://www.resultsdriven.co.uk
+
+User-agent: *
+Allow: /
+Disallow: /vendor/
+Disallow: /Readme.txt
+Disallow: /.vscode/
+
+# Sitemap location
+Sitemap: https://www.resultsdriven.co.uk/sitemap.xml
+
+# AI Crawler information
+# See llms.txt for AI-friendly content summary
