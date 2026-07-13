@@ -474,23 +474,23 @@
         if (r.deferred <= 0) {
           verdictClass = 'v-ok';
           verdictTitle = 'Paid in full on completion';
-          verdictBody = 'There is no deferred consideration to service, so affordability is not the constraint here. The tax timing still is — see below.';
+          verdictBody = 'There is no deferred consideration to service, so affordability is not your problem. The tax timing below still might be.';
         } else if (!r.cleared) {
           verdictClass = 'v-bad';
-          verdictTitle = 'On these numbers, the business cannot buy itself';
-          verdictBody = 'The profit available to fund the trust does not clear the deferred consideration within ' + MAX_YEARS + ' years. Either the price is too high for what this business earns, or too much of the profit is already spoken for. This is the answer it is much cheaper to get now than two years into a deal.';
+          verdictTitle = 'On these numbers the business cannot buy itself';
+          verdictBody = 'The profit available to fund the trust never clears the deferred consideration. Either the price is too high for what this business earns, or too much of the profit is already committed elsewhere. Better to know now than two years into a deal.';
         } else if (r.years > 8) {
           verdictClass = 'v-bad';
-          verdictTitle = 'Payable in ' + r.years + ' years — that is too long';
-          verdictBody = 'A payback beyond roughly eight years leaves you exposed to a decade of trading risk for money you have already been taxed on, and leaves the company with nothing spare for most of that time. Worth revisiting the price or the structure.';
+          verdictTitle = r.years + ' years to pay you off. That is too long.';
+          verdictBody = 'You would be carrying ' + r.years + ' years of trading risk on money you have already paid tax on, and the company would have very little to spare for most of that time. Worth another look at the price or the structure.';
         } else if (r.years > 5) {
           verdictClass = 'v-warn';
-          verdictTitle = 'Payable in ' + r.years + ' years — tight but possible';
-          verdictBody = 'This is workable, but it assumes the profit holds up for ' + r.years + ' years. Stress-test it: what happens to your payments if profit drops 20% for two years?';
+          verdictTitle = r.years + ' years to pay you off. Tight, but it works.';
+          verdictBody = 'This holds together, provided profit holds up for ' + r.years + ' years. Try it again with profit 20% lower and see what happens to your payments.';
         } else {
           verdictClass = 'v-ok';
-          verdictTitle = 'Payable in ' + r.years + ' years';
-          verdictBody = 'On these assumptions the business can service the deferred consideration comfortably, leaving room to keep investing while it pays you.';
+          verdictTitle = r.years + ' years to pay you off';
+          verdictBody = 'The business can service the deferred consideration on these assumptions and still have money left to invest while it pays you.';
         }
 
         var taxWarning = '';

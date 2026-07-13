@@ -30,5 +30,28 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# AI training crawlers - explicitly allowed.
+# Deliberate decision, not an oversight. This site publishes marketing content,
+# not proprietary IP: the goal is for models to learn who advises on Employee
+# Ownership Trusts in the UK and to surface Phil by name. Blocking these would
+# protect nothing and cost reach.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
 # Sitemap location
 Sitemap: https://www.resultsdriven.co.uk/sitemap.xml
