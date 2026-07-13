@@ -11,22 +11,21 @@ Web Design:
 
 /* SITE */
 
-Last update: December 2025
+Last update: July 2026
 Language: English (British)
 Doctype: HTML5
 Standards: WCAG 2.1 AA, Schema.org
-Animation: AOS (Animate On Scroll)
+Fonts: DM Sans, DM Serif Display (self-hosted)
 
 /* THANKS */
 
-Google Fonts - fonts.google.com
-AOS Library - michalsnik.github.io/aos
+DM Sans & DM Serif Display - Colophon Foundry / Google Fonts (SIL Open Font License)
 
 /* ABOUT RESULTS DRIVEN */
 
 Established: 2014
 Services: Part-Time Finance Director, Operations Director, Independent Director
-Specialisms: EMI Schemes, Employee Ownership Trusts, Acquisitions, Business Planning
+Specialisms: Employee Ownership Trusts (EOT), Succession Planning, Acquisitions, Business Planning
 Client Turnover: £2m to £20m+
 Sectors: Manufacturing, Distribution, Wholesale, Retail, Professional Services
 

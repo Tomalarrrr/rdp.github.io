@@ -236,7 +236,7 @@ h1, h2, h3, h4 {
   color: var(--color-primary);
 }
 
-.nav-linkedin i {
+.nav-linkedin svg {
   font-size: 1rem;
 }
 
@@ -485,7 +485,7 @@ h1, h2, h3, h4 {
   box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
 }
 
-.linkedin-connect i {
+.linkedin-connect svg {
   font-size: 1.125rem;
 }
 
@@ -765,6 +765,9 @@ h1, h2, h3, h4 {
   margin: 0 auto;
 }
 
+/* On the navy sections the dark gold only hits 3.2:1 — use the light gold,
+   which reads at 7:1 there. (Same pairing, just the right way round.) */
+.services .section-label,
 .contact .section-label {
   color: var(--color-accent);
 }
@@ -810,7 +813,7 @@ h1, h2, h3, h4 {
 .footer-brand p {
   font-size: 0.875rem;
   font-style: italic;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.65);
 }
 
 .footer-links {
@@ -855,7 +858,7 @@ h1, h2, h3, h4 {
   justify-content: space-between;
   padding-top: var(--spacing-lg);
   font-size: 0.8125rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.65);
 }
 
 /* Hero Background */
@@ -893,7 +896,7 @@ h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-size: 0.5em;
   font-weight: 500;
-  color: var(--color-accent);
+  color: var(--color-accent-text);
   vertical-align: middle;
   letter-spacing: 0.05em;
 }
@@ -958,43 +961,43 @@ h1, h2, h3, h4 {
   gap: 0.5rem;
 }
 
-.linkedin-card-action i {
+.linkedin-card-action svg {
   transition: transform 0.2s;
 }
 
-.linkedin-card:hover .linkedin-card-action i {
+.linkedin-card:hover .linkedin-card-action svg {
   transform: translateX(4px);
 }
 
-/* EMI Section */
-.emi-section {
+/* Employee Ownership Trust Section */
+.eot-section {
   background: linear-gradient(135deg, var(--color-off-white) 0%, #f0ebe3 100%);
   padding: var(--spacing-3xl) var(--spacing-lg);
 }
 
-.emi-container {
+.eot-container {
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-.emi-header {
+.eot-header {
   text-align: center;
   margin-bottom: var(--spacing-2xl);
 }
 
-.emi-header .section-subtitle {
+.eot-header .section-subtitle {
   margin: 0 auto;
   max-width: 700px;
 }
 
-.emi-benefits {
+.eot-benefits {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-2xl);
 }
 
-.emi-benefit {
+.eot-benefit {
   background: var(--color-white);
   padding: var(--spacing-xl);
   border-radius: var(--border-radius);
@@ -1003,13 +1006,13 @@ h1, h2, h3, h4 {
   transition: all 0.3s ease;
 }
 
-.emi-benefit:hover {
+.eot-benefit:hover {
   border-color: var(--color-accent);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-.emi-benefit-icon {
+.eot-benefit-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1022,7 +1025,7 @@ h1, h2, h3, h4 {
   margin-bottom: var(--spacing-md);
 }
 
-.emi-benefit h3 {
+.eot-benefit h3 {
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   font-weight: 500;
@@ -1030,13 +1033,13 @@ h1, h2, h3, h4 {
   margin-bottom: var(--spacing-sm);
 }
 
-.emi-benefit p {
+.eot-benefit p {
   font-size: 0.875rem;
   color: var(--color-text-light);
   line-height: 1.6;
 }
 
-.emi-cta {
+.eot-cta {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1046,7 +1049,7 @@ h1, h2, h3, h4 {
   gap: var(--spacing-xl);
 }
 
-.emi-cta-content h3 {
+.eot-cta-content h3 {
   font-family: var(--font-sans);
   font-size: 1.25rem;
   font-weight: 500;
@@ -1054,13 +1057,13 @@ h1, h2, h3, h4 {
   margin-bottom: var(--spacing-xs);
 }
 
-.emi-cta-content p {
+.eot-cta-content p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.9375rem;
   max-width: 500px;
 }
 
-.emi-cta .btn-primary {
+.eot-cta .btn-primary {
   flex-shrink: 0;
   padding: 1rem 2rem;
 }
@@ -1117,7 +1120,7 @@ h1, h2, h3, h4 {
   transform: translateY(-2px);
 }
 
-.btn-linkedin i {
+.btn-linkedin svg {
   font-size: 1.125rem;
 }
 
@@ -1280,30 +1283,30 @@ h1, h2, h3, h4 {
   }
 }
 
-/* EMI Section Responsive */
+/* Employee Ownership Trust Section Responsive */
 @media (max-width: 1024px) {
-  .emi-benefits {
+  .eot-benefits {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 768px) {
-  .emi-benefits {
+  .eot-benefits {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
   }
 
-  .emi-benefit {
+  .eot-benefit {
     padding: var(--spacing-lg);
   }
 
-  .emi-cta {
+  .eot-cta {
     flex-direction: column;
     text-align: center;
     padding: var(--spacing-xl);
   }
 
-  .emi-cta-content p {
+  .eot-cta-content p {
     max-width: 100%;
   }
 
@@ -1405,5 +1408,67 @@ h1, h2, h3, h4 {
 @media (max-width: 768px) {
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   Performance & motion
+   ========================================================================== */
+
+/* Fixed nav would otherwise cover the heading an anchor jumps to. Setting this
+   lets native CSS smooth-scrolling land correctly, so no JS scroll math. */
+:target,
+section[id] {
+  scroll-margin-top: 6rem;
+}
+
+/* Deliberately NOT using content-visibility here: the sections have very
+   different real heights, so the placeholder size would snap on scroll and
+   shift the scrollbar. The page renders in ~0ms of blocking time anyway. */
+
+/* Promote only what actually animates. */
+.site-nav {
+  will-change: background-color, box-shadow;
+}
+
+/* Interactive elements get a consistent, compositor-friendly response. */
+.btn-primary,
+.btn-secondary,
+.btn-large,
+.btn-linkedin,
+.linkedin-card,
+.nav-linkedin,
+.footer-linkedin {
+  transition: transform 0.18s ease, background-color 0.18s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-large:active,
+.btn-linkedin:active {
+  transform: translateY(1px);
+}
+
+/* Keyboard users get a visible ring; mouse users don't. */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Respect the OS "reduce motion" setting: no transforms, no smooth scroll. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

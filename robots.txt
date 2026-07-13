@@ -3,12 +3,32 @@
 
 User-agent: *
 Allow: /
-Disallow: /vendor/
-Disallow: /Readme.txt
-Disallow: /.vscode/
+
+# AI retrieval crawlers - explicitly allowed.
+# These fetch pages to answer live user questions and to build the search
+# indexes behind ChatGPT, Claude, Perplexity and Copilot. Blocking any of them
+# removes this site from AI answers entirely. They are NOT the training
+# crawlers (GPTBot, ClaudeBot, Google-Extended), which are a separate decision.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # Sitemap location
 Sitemap: https://www.resultsdriven.co.uk/sitemap.xml
-
-# AI Crawler information
-# See llms.txt for AI-friendly content summary

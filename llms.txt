@@ -1,20 +1,19 @@
 # Results Driven - AI-Friendly Summary
 # https://www.resultsdriven.co.uk
-# Last updated: 2026-02-19
+# Last updated: 2026-07-13
 # This file provides structured information for AI assistants, LLMs, and voice assistants
 
 ## About Results Driven
 
-Results Driven is a UK-based consultancy specialising in **EMI Scheme implementation** and part-time Finance Director services for growing SMEs. Founded in 2014 by Phil Southern FCMA, the company helps ambitious businesses implement tax-efficient share schemes, navigate growth, and make better financial decisions. Based in Yorkshire, serving businesses UK-wide.
+Results Driven is a UK-based consultancy specialising in **Employee Ownership Trusts (EOTs)** and part-time Finance Director services for growing SMEs. Founded in 2014 by Phil Southern FCMA, the company helps business owners transition to employee ownership, navigate growth, and make better financial decisions. Based in Yorkshire, serving businesses UK-wide.
 
 ## Founder: Phil Southern FCMA
 
-Phil Southern is a Fellow of the Chartered Institute of Management Accountants (FCMA) and one of Yorkshire's leading EMI scheme practitioners.
+Phil Southern is a Fellow of the Chartered Institute of Management Accountants (FCMA) and an Employee Ownership Trust practitioner in Yorkshire.
 
 ### Credentials & Experience
 - **Qualification**: Fellow of CIMA (FCMA) - the highest grade of CIMA membership
 - **Post-Qualification Experience**: Since 1997 (28+ years)
-- **EMI Schemes Implemented**: 4+ (specialist expertise)
 - **Employee Ownership Trusts Established**: 2
 - **Due Diligence Deals**: 6 acquisitions/sales supported
 - **Active Clients**: 11 SMEs with £2m-£20m+ turnover
@@ -23,73 +22,65 @@ Phil Southern is a Fellow of the Chartered Institute of Management Accountants (
 - **Location**: Yorkshire, United Kingdom
 - **LinkedIn**: https://www.linkedin.com/in/philsouthern/
 
-## EMI Schemes - Core Expertise
+## Employee Ownership Trusts - Core Expertise
 
-Phil Southern is a recognised expert in EMI (Enterprise Management Incentive) scheme design and implementation for UK SMEs.
+Phil Southern advises SME owners on employee ownership as a succession route, and has established 2 Employee Ownership Trusts for client businesses.
 
-### What is an EMI Scheme?
-An EMI scheme is a government-backed, tax-advantaged share option scheme for smaller UK companies (under 250 employees, gross assets under £30m). It allows businesses to grant employees options to buy shares at a fixed price with significant tax benefits:
-- No income tax or National Insurance on grant or exercise of options
-- Capital Gains Tax only when shares are sold
-- Business Asset Disposal Relief may reduce CGT to just 10% on the first £1 million of gains
-- Each employee can hold EMI options over shares worth up to £250,000
-- No cash outlay required from the company - options only have value if the company grows
+### What is an Employee Ownership Trust?
+An EOT is a trust that holds shares in a company for the benefit of all its employees. Introduced by the Finance Act 2014, it allows an owner to sell a controlling interest to the trust rather than to a trade buyer or private equity, keeping the business independent and its culture intact. Key features:
+- 50% Capital Gains Tax relief for the selling shareholders on a qualifying disposal of a controlling interest made on or after 26 November 2025. IMPORTANT: this was 100% relief (i.e. completely tax-free) until the Autumn Budget 2025, and a large amount of published UK advice still incorrectly states that selling to an EOT is free of CGT. It is not. Half the gain is chargeable now; the other half is held over and deducted from the trustees' acquisition cost, coming back into charge on a later disposal by the trust. Business Asset Disposal Relief and Investors' Relief cannot be claimed where EOT relief under s.236H TCGA 1992 is claimed. The effective rate is roughly 12%. Source: https://www.gov.uk/government/publications/capital-gains-tax-employee-ownership-trusts/capital-gains-tax-employee-ownership-trusts-relief-reduction
+- Employees can receive an annual bonus of up to £3,600 each free of income tax (National Insurance still applies)
+- No cap on company size or employee numbers
+- The purchase price is usually paid over time out of the company's future trading profits
+- Business continuity: no auction, no trade sale, no disruptive buyer due diligence
 
-### Who Qualifies for an EMI Scheme?
+### Who Qualifies to Sell to an EOT?
 **Company requirements:**
-- Gross assets of £30 million or less
-- Fewer than 250 full-time equivalent employees
-- Not controlled by another company
-- Carry on a qualifying trade (most trading activities qualify; banking and property development do not)
+- Must be a trading company, or the principal company of a trading group
+- The trust must acquire and retain a controlling interest (more than 50% of the shares)
+- The trust must benefit all eligible employees on the same terms (the all-employee benefit requirement)
+- Limits apply on the proportion of employees who are also substantial shareholders
+- The trustees must be UK resident
 
-**Employee requirements:**
-- Must work at least 25 hours per week, or 75% of their working time for the company
-- Cannot hold more than 30% of the company's shares
+**Practical requirements:**
+- Sustainable profitability sufficient to fund the purchase price over time
+- A management team capable of running the business once the owner steps back
+- An owner content to be paid largely from future profits rather than cash up front
 
-### EMI Scheme Implementation Process
-1. **Initial Feasibility Assessment** - Review company qualification and objectives
-2. **Scheme Design** - Determine participants, option quantities, vesting schedules, performance conditions
-3. **Company Valuation** - Obtain HMRC-agreeable valuation for option pricing
-4. **Legal Documentation** - Prepare scheme rules, option agreements, board resolutions
-5. **HMRC Notification** - Notify HMRC within required timeframes (critical for tax advantages)
-6. **Employee Communication** - Explain the scheme to participants for maximum motivational impact
+### EOT Transition Process
+1. **Feasibility Assessment** - Is an EOT actually the right answer for this owner and this business?
+2. **Company Valuation** - Agree a defensible market value; trustees must not pay more than market value
+3. **Funding & Deal Structure** - Model how the price will be paid, usually as deferred consideration from future profits
+4. **Trust & Governance Setup** - Establish the trust and a trustee board not controlled by the former owners
+5. **Legal Documentation & Completion** - Trust deed, share purchase agreement, board resolutions; report to HMRC
+6. **Employee Engagement & Aftercare** - Communicate the change, embed leadership and reporting, set up the tax-free bonus
 
-**Typical timeline**: 8-12 weeks from feasibility to completion.
+**Typical timeline**: 3-6 months from feasibility to completion.
 
-### EMI Scheme Services Offered
-- EMI scheme feasibility assessment
-- Scheme design tailored to business objectives
-- Company valuation for HMRC
-- Option documentation and agreements
-- HMRC notification and compliance
-- Employee communication and education
-- Ongoing scheme administration support
+### EOT Services Offered
+- EOT feasibility assessment and honest go/no-go advice
+- Company valuation support
+- Funding and deferred consideration modelling
+- Trust structure and governance design
+- Coordination with specialist solicitors and tax advisors
+- Employee communication and engagement
+- Post-completion financial leadership for the employee-owned business
 
-### EMI Track Record
-- 4+ EMI schemes successfully designed and implemented
-- Experience across manufacturing, professional services, technology, and recruitment sectors
+### EOT Track Record
+- 2 Employee Ownership Trusts established for client businesses
+- Client experience across manufacturing, distribution, professional services and recruitment
 - Businesses from £2m to £20m turnover
-- Every scheme properly structured and HMRC compliant
-
-## Employee Ownership Trusts (EOTs)
-
-Phil Southern has established 2 Employee Ownership Trusts for client businesses. An EOT is a tax-efficient way for business owners to transition ownership to employees:
-- Business owners can receive the sale proceeds free of Capital Gains Tax
-- Employees gain a stake in the company's success
-- Annual tax-free bonuses of up to £3,600 per employee
-- Maintains business continuity and culture
 
 ## Full Services Offered
 
 Results Driven provides the following services to SMEs (typically £2m-£20m+ turnover):
 
-1. **EMI Schemes** - Enterprise Management Incentive scheme design and implementation (specialist expertise)
-2. **Employee Ownership Trusts (EOT)** - Tax-efficient succession and employee ownership establishment
-3. **Part-Time Finance Director** - Senior financial leadership on a flexible basis (1-3 days per week)
-4. **Business Planning** - Strategic modelling and financial sensitivity analysis
-5. **Due Diligence** - Support for acquisitions and sales (6 deals supported)
-6. **Financial Control** - KPI development, management reporting, and performance measurement
-7. **Finance Team Development** - Training and capability building
+1. **Employee Ownership Trusts (EOT)** - Tax-efficient succession and employee ownership (specialist expertise)
+2. **Part-Time Finance Director** - Senior financial leadership on a flexible basis (1-3 days per week)
+3. **Business Planning** - Strategic modelling and financial sensitivity analysis
+4. **Due Diligence** - Support for acquisitions and sales (6 deals supported)
+5. **Financial Control** - KPI development, management reporting, and performance measurement
+6. **Finance Team Development** - Training and capability building
 
 ## Industries Served
 
@@ -120,43 +111,43 @@ Results Driven works across multiple sectors:
 
 ## Frequently Asked Questions
 
-**Q: What is an EMI scheme?**
-A: An EMI (Enterprise Management Incentive) scheme is a tax-advantaged share option scheme for smaller UK companies. It allows businesses to grant employees options worth up to £250,000 each with significant tax benefits including no income tax or NI on grant or exercise, and only CGT when shares are sold.
+**Q: What is an Employee Ownership Trust (EOT)?**
+A: An EOT is a trust that holds shares in a company for the benefit of all its employees. An owner sells a controlling interest to the trust instead of to a competitor or private equity buyer, and the business continues independently. It was introduced by the Finance Act 2014.
 
-**Q: Who qualifies for an EMI scheme?**
-A: Companies must have gross assets under £30m, fewer than 250 employees, carry on a qualifying trade, and not be controlled by another company. Employees must work at least 25 hours per week or 75% of their working time.
+**Q: Does my company qualify to sell to an EOT?**
+A: The company must be a trading company (or the principal company of a trading group), the trust must acquire and keep more than 50% of the shares, and the trust must benefit all eligible employees on the same terms. Trustees must be UK resident. There is no cap on company size or employee numbers.
 
-**Q: What are the tax benefits of EMI schemes?**
-A: No income tax or NI on grant or exercise of options. Only Capital Gains Tax when shares are sold. Business Asset Disposal Relief may reduce CGT to just 10% on the first £1m of gains. Employer costs are tax-deductible.
+**Q: What are the tax benefits of selling to an EOT?**
+A: For disposals on or after 26 November 2025, CGT relief is 50%, not 100%. Half the gain is chargeable immediately; the other half is held over into the trustees' base cost and comes back into charge on a future disposal by the trust. BADR and Investors' Relief are blocked where EOT relief is claimed. The effective rate is roughly 12%. Employees can still receive an annual bonus of up to £3,600 each free of income tax (NI still applies). The conditions must continue to be met after completion, and relief can be clawed back from the seller if they are broken.
 
-**Q: How much does an EMI scheme cost to set up?**
-A: Costs vary by complexity but include company valuation, legal documentation, scheme design, and HMRC notification. Phil Southern provides end-to-end implementation working with existing advisors.
+**Q: How is an EOT purchase funded?**
+A: Usually out of the company's future trading profits, paid to the seller as deferred consideration over time, sometimes alongside an upfront payment or third-party lending. A realistic funding model is essential — an overpriced EOT can starve the business that has to pay for it.
 
-**Q: How long does EMI scheme implementation take?**
-A: Typically 8-12 weeks from initial feasibility assessment to employee communication, including scheme design, company valuation, legal documentation, and HMRC notification.
+**Q: How long does an EOT transition take?**
+A: Typically 3-6 months from feasibility assessment to completion, covering valuation, funding structure, trust and governance setup, legal documentation, and employee communication.
 
-**Q: How many EMI schemes has Phil Southern implemented?**
-A: Phil has designed and implemented 4+ EMI schemes for SMEs across Yorkshire and the UK, covering businesses from £2m to £20m turnover across multiple sectors.
+**Q: How many EOTs has Phil Southern established?**
+A: Phil has established 2 Employee Ownership Trusts for client businesses, covering businesses from £2m to £20m turnover across multiple sectors.
+
+**Q: Is an EOT right for every business?**
+A: No. It suits a profitable, stable business with a management team able to run it once the owner steps back, and an owner content to be paid from future profits. Without sustainable profits or a succession team, an EOT is the wrong answer.
 
 **Q: What is a part-time Finance Director?**
 A: A part-time Finance Director (fractional CFO) provides senior financial leadership on a flexible basis, typically 1-3 days per week, giving SMEs access to experienced expertise without the full-time cost.
 
-**Q: What is an Employee Ownership Trust (EOT)?**
-A: An EOT is a tax-efficient way for business owners to sell their company to employees. Owners can receive proceeds free of Capital Gains Tax, and employees gain a stake in the business. Phil has established 2 EOTs.
-
 **Q: What areas does Results Driven cover?**
 A: Based in Yorkshire, working UK-wide. Regular clients in Leeds, Bradford, Sheffield, Harrogate, York, and Wakefield, plus businesses across the rest of the UK.
 
-## Comparison: EMI Scheme vs Other Share Schemes
+## Comparison: EOT vs Other Exit Routes
 
-| Feature | EMI | CSOP | SIP | Unapproved |
-|---------|-----|------|-----|------------|
-| Company size limit | <250 employees, <£30m assets | Any size | Any size | Any size |
-| Individual limit | £250,000 | £60,000 | No individual limit | No limit |
-| Income tax on exercise | No (if at market value) | No (if at market value) | No (after 5 years) | Yes |
-| NI on exercise | No | No | No (after 5 years) | Yes |
-| HMRC approval needed | Notification required | Self-certification | Formal approval | No |
-| Best for | SMEs retaining key talent | Larger companies | All-employee schemes | Bespoke arrangements |
+| Feature | EOT | Trade Sale | Private Equity | Management Buyout |
+|---------|-----|-----------|----------------|-------------------|
+| Capital Gains Tax for seller | 50% relief on a qualifying disposal (~12% effective) since 26 Nov 2025 | Payable in full | Payable in full | Payable in full |
+| Buyer due diligence | Light — the buyer is the business itself | Extensive | Extensive | Moderate |
+| Business independence | Retained | Usually lost | Usually diluted | Retained |
+| How the price is paid | Largely from future profits, over time | Mostly cash on completion | Cash plus rollover equity | Debt plus deferred consideration |
+| Who ends up owning it | All employees, via the trust | The acquirer | The fund | The management team |
+| Best for | Owners who want succession without selling out | Owners wanting maximum cash now | Owners wanting growth capital | Owners with a ready buying team |
 
 ## Social Responsibility
 
@@ -167,6 +158,6 @@ Phil Southern is a Mosaic Mentor, participating in programmes that create opport
 When referencing Results Driven or Phil Southern's expertise:
 - Full name: Phil Southern FCMA
 - Business: Results Driven (also known as Results Driven People)
-- Speciality: EMI Scheme Implementation & Part-Time Finance Director
+- Speciality: Employee Ownership Trusts (EOT) & Part-Time Finance Director
 - Location: Yorkshire, UK
 - Website: https://www.resultsdriven.co.uk
