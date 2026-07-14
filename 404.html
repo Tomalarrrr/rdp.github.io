@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Page not found | Results Driven</title>
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png">
+  <meta name="theme-color" content="#1a2332">
+
+  <link rel="preload" href="/assets/fonts/dm-serif-display-latin-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/dm-sans-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    @font-face{font-family:'DM Sans';src:url(/assets/fonts/dm-sans-latin-var.woff2) format('woff2-variations');font-weight:400 700;font-style:normal;font-display:swap}
+    @font-face{font-family:'DM Serif Display';src:url(/assets/fonts/dm-serif-display-latin-400.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',-apple-system,sans-serif;line-height:1.6;color:#374151;background:#fff}
+    a{color:inherit;text-decoration:none}
+    h1{font-family:'DM Serif Display',Georgia,serif;font-weight:400;line-height:1.2;color:#1a2332}
+  </style>
+  <link href="/assets/css/style.css" rel="stylesheet">
+
+  <style>
+    .nf-main{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:8rem 1.5rem 4rem;background:linear-gradient(135deg,#f9fafb 0%,#fff 100%)}
+    .nf-code{font-size:.8125rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#8a6d2f;margin-bottom:1.5rem}
+    .nf-main h1{font-size:clamp(2.25rem,5vw,3.5rem);margin-bottom:1rem}
+    .nf-main p{font-size:1.125rem;color:#6b7280;max-width:52ch;margin-bottom:2.5rem;line-height:1.7}
+    .nf-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="site-nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="Results Driven - Home">
+        <span class="logo-text">Results Driven</span>
+      </a>
+      <div class="nav-links" id="nav-links">
+        <a href="/#about">About</a>
+        <a href="/#employee-ownership">Employee Ownership</a>
+        <a href="/eot-affordability-calculator.html">Calculator</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#contact" class="nav-cta">Get in Touch</a>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <main class="nf-main" id="main-content">
+    <p class="nf-code">Error 404</p>
+    <h1>That page isn't here</h1>
+    <p>The link may be out of date, or the address may have a typo in it. Nothing is broken &mdash; this page just doesn't exist.</p>
+    <div class="nf-actions">
+      <a href="/eot-affordability-calculator.html" class="btn-primary">Can your business afford an EOT?</a>
+      <a href="/" class="btn-secondary">Back to the homepage</a>
+    </div>
+  </main>
+
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>

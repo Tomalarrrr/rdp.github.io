@@ -14,7 +14,7 @@ Web Design:
 Last update: July 2026
 Language: English (British)
 Doctype: HTML5
-Standards: WCAG 2.1 AA, Schema.org
+Standards: HTML5, Schema.org. Built to WCAG 2.1 AA; not independently audited., Schema.org
 Fonts: DM Sans, DM Serif Display (self-hosted)
 
 /* THANKS */

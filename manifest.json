@@ -1,16 +1,29 @@
 {
-  "name": "Results Driven - Part-Time Finance Director",
+  "name": "Results Driven - Employee Ownership Trusts & Part-Time Finance Director",
   "short_name": "Results Driven",
-  "description": "Employee Ownership Trust (EOT) advice & part-time Finance Director services for SMEs in Yorkshire",
+  "description": "Employee Ownership Trust (EOT) advice and part-time Finance Director services. Modelling whether your business can afford to buy itself. UK-wide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#1a2332",
   "icons": [
     {
-      "src": "assets/img/favicon.png",
-      "sizes": "150x150",
-      "type": "image/png"
+      "src": "assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/icon-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
     }
   ]
 }

@@ -18,16 +18,19 @@
   <meta property="og:site_name" content="Results Driven">
   <meta property="og:title" content="EOT Affordability Calculator | Can Your Business Afford to Buy Itself?">
   <meta property="og:description" content="Model whether your company's profits can fund the deferred consideration, and whether your CGT bill lands before you have been paid. Free, no email required.">
-  <meta property="og:image" content="https://www.resultsdriven.co.uk/assets/img/Phil.webp">
+  <meta property="og:image" content="https://www.resultsdriven.co.uk/assets/img/og-calculator.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EOT Affordability Calculator - Results Driven">
   <meta property="og:locale" content="en_GB">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="EOT Affordability Calculator | Can Your Business Afford to Buy Itself?">
   <meta name="twitter:description" content="Model whether your company's profits can fund the deferred consideration, and whether your CGT bill lands before you have been paid.">
-  <meta name="twitter:image" content="https://www.resultsdriven.co.uk/assets/img/Phil.webp">
+  <meta name="twitter:image" content="https://www.resultsdriven.co.uk/assets/img/og-calculator.jpg">
 
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <link rel="apple-touch-icon" href="assets/img/favicon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a2332">
 
@@ -60,15 +63,45 @@
     .calc-legend{font-size:.75rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a6d2f;margin-bottom:1rem;padding:0}
     .calc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.25rem}
     .calc-field label{display:block;font-size:.875rem;font-weight:500;color:#374151;margin-bottom:.375rem}
-    .calc-hint{display:block;font-size:.8125rem;font-weight:400;color:#9ca3af;margin-top:.125rem}
+    .calc-hint{display:block;font-size:.8125rem;font-weight:400;color:#6b7280;margin-top:.125rem}
     .calc-input-wrap{position:relative;display:flex;align-items:center}
-    .calc-prefix,.calc-suffix{position:absolute;color:#9ca3af;font-size:.9375rem;pointer-events:none}
+    .calc-prefix,.calc-suffix{position:absolute;color:#6b7280;font-size:.9375rem;pointer-events:none}
     .calc-prefix{left:.75rem}
     .calc-suffix{right:.75rem}
     .calc-field input{width:100%;padding:.6875rem .75rem;font-family:inherit;font-size:1rem;color:#1a2332;border:1px solid #e5e7eb;border-radius:4px;background:#fff}
     .calc-field input.has-prefix{padding-left:1.75rem}
     .calc-field input.has-suffix{padding-right:2rem}
-    .calc-field input:focus{outline:2px solid #c9a962;outline-offset:1px;border-color:#c9a962}
+    /* Dark ring, not gold: #c9a962 on white is only 2.25:1 and fails WCAG 2.2's
+       3:1 minimum for focus indicators. Matches the site-wide :focus-visible. */
+    .calc-field input:focus-visible{outline:2px solid #1a2332;outline-offset:1px;border-color:#1a2332}
+    .calc-field input:hover{border-color:#9ca3af}
+
+    /* This link lives in .calc-note, outside .calc-prose, so without an explicit
+       rule it inherits `color:inherit; text-decoration:none` and renders as plain
+       body text — an invisible link. */
+    .calc-note a{color:#8a6d2f;text-decoration:underline;text-underline-offset:2px}
+    .calc-note a:hover{color:#1a2332}
+
+    .calc-empty{border:1px dashed #d1d5db;border-radius:6px;padding:1.75rem;color:#6b7280;background:#f9fafb}
+    .calc-empty strong{display:block;color:#1a2332;font-family:'DM Serif Display',Georgia,serif;font-size:1.25rem;font-weight:400;margin-bottom:.375rem}
+
+    .calc-notice{margin-top:.75rem;font-size:.8125rem;color:#8a5a12;background:#fdf6ec;border:1px solid #eddcbf;border-radius:4px;padding:.5rem .75rem}
+
+    .calc-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.75rem}
+    .calc-btn-quiet{display:inline-flex;align-items:center;justify-content:center;font-family:inherit;font-size:.875rem;font-weight:500;padding:.625rem 1rem;border:1px solid #e5e7eb;border-radius:4px;background:#fff;color:#1a2332;cursor:pointer}
+    .calc-btn-quiet:hover{border-color:#1a2332}
+    .calc-copied{font-size:.8125rem;color:#1c5c3c;align-self:center}
+
+    @media print{
+      .site-nav,.footer,.calc-actions,.calc-note,.calc-prose h2,.calc-prose p,.calc-prose ul,.calc-cta{display:none}
+      .calc-prose .calc-disclaimer{display:block;font-size:10pt}
+      .calc-main{padding:0}
+      .calc-panel{border:0;padding:0}
+      .calc-table-shell::after{display:none}
+      .calc-table-wrap{overflow:visible}
+      table.calc-table{min-width:0;font-size:9pt}
+      .calc-verdict,.calc-results,.calc-table-shell{break-inside:avoid}
+    }
 
     .calc-verdict{border-radius:6px;padding:1.75rem;margin-bottom:1.75rem;border:1px solid}
     .calc-verdict h3{font-size:1.5rem;margin-bottom:.5rem}
@@ -80,20 +113,34 @@
     .v-bad{background:#fdf1f0;border-color:#eecfcb}
     .v-bad h3{color:#8c2f24}
 
-    .calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:#e5e7eb;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:1.75rem}
-    .calc-result{background:#fff;padding:1.5rem}
+    /* Five tiles in an auto-fit grid will orphan the last one on most widths. The
+       old technique (1px gap over a grey container background) rendered that empty
+       grid area as a dead grey block. Hairlines are drawn per-cell instead, so any
+       leftover space is simply white. */
+    .calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:#fff;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden;margin-bottom:1.75rem}
+    .calc-result{background:#fff;padding:1.5rem;box-shadow:0 0 0 1px #e5e7eb}
+    /* There are five tiles and the panel is never wide enough for more than four,
+       so the fifth always lands alone. Rather than orphan it, let the headline
+       figure — what the seller actually walks away with — span the row. */
+    .calc-result:last-child{grid-column:1/-1}
     .calc-result-label{display:block;font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:#6b7280;margin-bottom:.5rem}
     .calc-result-value{display:block;font-family:'DM Serif Display',Georgia,serif;font-size:1.875rem;color:#1a2332;line-height:1.15}
-    .calc-result-note{display:block;font-size:.8125rem;color:#9ca3af;margin-top:.375rem}
+    .calc-result-note{display:block;font-size:.8125rem;color:#6b7280;margin-top:.375rem}
     .calc-result-value.is-bad{color:#8c2f24}
 
-    .calc-table-wrap{overflow-x:auto;border:1px solid #e5e7eb;border-radius:6px}
+    .calc-table-shell{position:relative;border:1px solid #e5e7eb;border-radius:6px}
+    .calc-table-wrap{overflow-x:auto;border-radius:6px}
+    /* Right-edge fade: signals there are more columns off-screen on narrow viewports.
+       Sits on the shell, not the scroller, so it stays put while the table scrolls. */
+    .calc-table-shell::after{content:'';position:absolute;top:0;right:0;bottom:0;width:2.5rem;border-radius:0 6px 6px 0;background:linear-gradient(270deg,rgba(255,255,255,.92),rgba(255,255,255,0));pointer-events:none;opacity:0;transition:opacity .25s}
+    .calc-table-shell.has-overflow::after{opacity:1}
     table.calc-table{width:100%;border-collapse:collapse;font-size:.9375rem;min-width:560px}
     .calc-table th,.calc-table td{padding:.75rem 1rem;text-align:right;border-bottom:1px solid #f0f1f3}
     .calc-table th{font-size:.75rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#6b7280;background:#f9fafb;text-align:right}
     .calc-table th:first-child,.calc-table td:first-child{text-align:left}
     .calc-table tbody tr:last-child td{border-bottom:0}
     .calc-table tr.is-taxdue td{background:#fdf6ec;font-weight:500}
+    .calc-table .row-date{display:block;font-size:.75rem;color:#6b7280;font-weight:400}
     .calc-table .row-flag{font-size:.75rem;color:#8a5a12;display:block;font-weight:400}
 
     .calc-prose{max-width:70ch;margin-bottom:3rem}
@@ -102,7 +149,7 @@
     .calc-prose p{margin-bottom:1rem;line-height:1.75}
     .calc-prose ul{margin:0 0 1rem 1.25rem}
     .calc-prose li{margin-bottom:.5rem;line-height:1.7}
-    .calc-prose a{color:#8a6d2f;text-decoration:underline;text-underline-offset:2px}
+    .calc-prose a:not(.btn-primary){color:#8a6d2f;text-decoration:underline;text-underline-offset:2px}
     .calc-cta{border-top:1px solid #e5e7eb;padding-top:2.5rem;margin-top:1rem}
     .calc-cta h2{margin-top:0}
     .calc-disclaimer{font-size:.875rem;color:#6b7280;background:#f9fafb;border:1px solid #e5e7eb;border-radius:6px;padding:1.25rem;line-height:1.7}
@@ -158,7 +205,7 @@
             "name": "If the EOT pays me out of future profits, when is my Capital Gains Tax due?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Capital Gains Tax is charged by reference to the whole consideration at the date of disposal, including ascertainable deferred consideration you have not yet received, and it is payable by 31 January following the end of the tax year in which the disposal took place. When relief was 100% this did not matter because there was no tax to pay. Now that half the gain is chargeable, a seller can face a substantial tax bill long before the company has paid them most of the purchase price. Section 280 of the Taxation of Chargeable Gains Act 1992 allows HMRC to agree payment by instalments where consideration is payable over a period exceeding 18 months, and section 48 gives relief where consideration ultimately proves irrecoverable. This calculator shows the gap between the tax due and the cash actually received by that date."
+              "text": "Capital Gains Tax is charged by reference to the whole consideration at the date of disposal, including ascertainable deferred consideration you have not yet received, and it is payable by 31 January following the end of the tax year in which the disposal took place. When relief was 100% this did not matter because there was no tax to pay. Now that half the gain is chargeable, a seller can face a substantial tax bill long before the company has paid them most of the purchase price. Section 280 of the Taxation of Chargeable Gains Act 1992 lets the seller elect to pay the tax by instalments where the consideration itself is payable by instalments over a period exceeding 18 months, spread over up to eight years and ending no later than the final consideration instalment, and section 48 gives relief where consideration ultimately proves irrecoverable. This calculator shows the gap between the tax due and the cash actually received by that date."
             }
           }
         ]
@@ -170,15 +217,21 @@
 
 <body>
 
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <nav class="site-nav" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
       <a href="/" class="nav-logo" aria-label="Results Driven - Home">
         <span class="logo-text">Results Driven</span>
       </a>
       <div class="nav-links" id="nav-links">
-        <a href="/#employee-ownership">Employee Ownership</a>
         <a href="/#about">About</a>
+        <a href="/#employee-ownership">Employee Ownership</a>
+        <a href="/eot-affordability-calculator.html" aria-current="page">Calculator</a>
+        <a href="/#services">Services</a>
+        <a href="/#clients">Clients</a>
         <a href="/#faq">FAQ</a>
+        <a href="https://www.linkedin.com/in/philsouthern/" target="_blank" rel="noopener" class="nav-linkedin" aria-label="View Phil's LinkedIn Profile"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg></a>
         <a href="/#contact" class="nav-cta">Get in Touch</a>
       </div>
       <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
@@ -188,14 +241,14 @@
     </div>
   </nav>
 
-  <main class="calc-main">
+  <main class="calc-main" id="main-content">
 
     <div class="calc-intro">
       <p class="section-label">Free tool &middot; No email required</p>
       <h1>Can your business afford to buy itself?</h1>
       <p class="calc-lede">Most Employee Ownership Trusts are paid for out of profits the company hasn't earned yet. The trust starts with no money, so you get paid over several years from future trading. That makes affordability the question that decides everything. <strong>Can the business really service the deferred consideration, and will your tax bill arrive before your money does?</strong></p>
       <div class="calc-note">
-        <strong>The rules changed on 26 November 2025.</strong> Capital Gains Tax relief on a qualifying disposal to an EOT was cut from 100% to 50%. Half the gain is now chargeable. The other half is held over into the trustees' base cost, so it comes back into charge if the trust ever sells. Business Asset Disposal Relief and Investors' Relief can't be claimed alongside it. The effective rate works out at about 12%. A lot of advice online still says selling to an EOT is tax free. It isn't. Source: <a href="https://www.gov.uk/government/publications/capital-gains-tax-employee-ownership-trusts/capital-gains-tax-employee-ownership-trusts-relief-reduction" rel="noopener">HMRC, Capital Gains Tax: Employee Ownership Trusts relief reduction</a>.
+        <strong>The rules changed on 26 November 2025.</strong> Capital Gains Tax relief on a qualifying disposal to an EOT was cut from 100% to 50%. Half the gain is now chargeable. The other half is held over into the trustees' base cost, so it comes back into charge if the trust ever sells. Business Asset Disposal Relief and Investors' Relief can't be claimed alongside it. At the 24% main rate on shares, the effective rate works out at about 12%. A lot of advice online still says selling to an EOT is tax free. It isn't. Source: <a href="https://www.gov.uk/government/publications/capital-gains-tax-employee-ownership-trusts/capital-gains-tax-employee-ownership-trusts-relief-reduction" target="_blank" rel="noopener noreferrer">HMRC, Capital Gains Tax: Employee Ownership Trusts relief reduction<span class="visually-hidden"> (opens in a new tab)</span></a>.
       </div>
     </div>
 
@@ -212,7 +265,7 @@
             </label>
             <div class="calc-input-wrap">
               <span class="calc-prefix">£</span>
-              <input type="number" id="price" class="has-prefix" value="5000000" min="0" step="10000" inputmode="numeric">
+              <input type="text" id="price" class="has-prefix money" value="5,000,000" inputmode="numeric" autocomplete="off" spellcheck="false">
             </div>
           </div>
           <div class="calc-field">
@@ -221,24 +274,25 @@
             </label>
             <div class="calc-input-wrap">
               <span class="calc-prefix">£</span>
-              <input type="number" id="upfront" class="has-prefix" value="500000" min="0" step="10000" inputmode="numeric">
+              <input type="text" id="upfront" class="has-prefix money" value="500,000" inputmode="numeric" autocomplete="off" spellcheck="false" aria-describedby="upfront-notice">
             </div>
+            <p id="upfront-notice" class="calc-notice" hidden></p>
           </div>
           <div class="calc-field">
             <label for="basecost">Your base cost
-              <span class="calc-hint">What the shares originally cost you</span>
+              <span class="calc-hint">What the shares originally cost you &mdash; often nominal if you founded the company</span>
             </label>
             <div class="calc-input-wrap">
               <span class="calc-prefix">£</span>
-              <input type="number" id="basecost" class="has-prefix" value="1000" min="0" step="1000" inputmode="numeric">
+              <input type="text" id="basecost" class="has-prefix money" value="1,000" inputmode="numeric" autocomplete="off" spellcheck="false">
             </div>
           </div>
           <div class="calc-field">
             <label for="completion">Completion date
-              <span class="calc-hint">Sets the tax year and the CGT due date</span>
+              <span class="calc-hint">Sets the tax year and the CGT due date. This tool models disposals on or after 26 November 2025.</span>
             </label>
             <div class="calc-input-wrap">
-              <input type="date" id="completion" value="2026-09-30">
+              <input type="date" id="completion" value="2026-09-30" min="2025-11-26">
             </div>
           </div>
         </div>
@@ -249,11 +303,11 @@
         <div class="calc-grid">
           <div class="calc-field">
             <label for="pbt">Annual profit before tax
-              <span class="calc-hint">Sustainable, maintainable profit</span>
+              <span class="calc-hint">The profit you'd expect in a normal year, not your best one</span>
             </label>
             <div class="calc-input-wrap">
               <span class="calc-prefix">£</span>
-              <input type="number" id="pbt" class="has-prefix" value="900000" min="0" step="10000" inputmode="numeric">
+              <input type="text" id="pbt" class="has-prefix money" value="900,000" inputmode="numeric" autocomplete="off" spellcheck="false">
             </div>
           </div>
           <div class="calc-field">
@@ -267,7 +321,7 @@
           </div>
           <div class="calc-field">
             <label for="ctrate">Corporation tax rate
-              <span class="calc-hint">25% main rate</span>
+              <span class="calc-hint">25% main rate; 19% below &pound;50k profit, with marginal relief between</span>
             </label>
             <div class="calc-input-wrap">
               <input type="number" id="ctrate" class="has-suffix" value="25" min="0" max="40" step="0.5">
@@ -276,7 +330,7 @@
           </div>
           <div class="calc-field">
             <label for="avail">Profit available to fund the trust
-              <span class="calc-hint">After capex, working capital, reinvestment</span>
+              <span class="calc-hint">After capex, working capital and reinvestment. Most businesses can't sustain more than 60&ndash;75%.</span>
             </label>
             <div class="calc-input-wrap">
               <input type="number" id="avail" class="has-suffix" value="70" min="0" max="100" step="5">
@@ -285,7 +339,7 @@
           </div>
           <div class="calc-field">
             <label for="interest">Interest on deferred consideration
-              <span class="calc-hint">Often 0%. Sometimes base rate linked.</span>
+              <span class="calc-hint">Often 0%. Must not exceed a reasonable commercial rate, or the relief is at risk.</span>
             </label>
             <div class="calc-input-wrap">
               <input type="number" id="interest" class="has-suffix" value="0" min="0" max="15" step="0.25">
@@ -294,7 +348,7 @@
           </div>
           <div class="calc-field">
             <label for="cgtrate">Your CGT rate
-              <span class="calc-hint">24% main rate on shares</span>
+              <span class="calc-hint">24% for higher-rate taxpayers; 18% within the basic rate band</span>
             </label>
             <div class="calc-input-wrap">
               <input type="number" id="cgtrate" class="has-suffix" value="24" min="0" max="45" step="1">
@@ -304,7 +358,11 @@
         </div>
       </fieldset>
 
-      <div id="calc-output" aria-live="polite"></div>
+      <!-- Screen readers get a short spoken summary here. The full output below is
+           rebuilt on every keystroke, so making that the live region would re-read
+           the entire payment table each time a digit changed. -->
+      <p id="calc-status" role="status" class="visually-hidden"></p>
+      <div id="calc-output"></div>
     </form>
 
     <noscript>
@@ -316,7 +374,8 @@
 
     <div class="calc-prose">
       <h2>How this calculation works</h2>
-      <p>The trust buys your shares but has no cash of its own. In nearly every deal the company funds the trust out of future post-tax profits, and the trust passes that money on to you as deferred consideration. Contributions the company makes to fund the purchase aren't treated as distributions. So the profits simply have to be there.</p>
+      <p>The trust buys your shares but has no cash of its own. In nearly every deal the company funds the trust out of future post-tax profits, and the trust passes that money on to you as deferred consideration. So the profits simply have to be there.</p>
+      <p>One point here is widely got wrong, including by people who should know better. HMRC used to accept that a company's contributions to the trust to fund the purchase were not distributions. It has since changed its mind. Its current view is that they <em>are</em> distributions under section 1000 CTA 2010, because they are paid out of the company's assets to the trustee in its capacity as a shareholder. What saves you is a separate income tax relief introduced for distributions made on or after 30 October 2024 (section 401ZA ITTOIA 2005), which lets the trustees deduct qualifying acquisition costs. Those costs include the price of the shares, repayment of borrowings taken out to fund the purchase, interest on those borrowings or on deferred consideration up to a reasonable commercial rate, the cost of the valuation, any stamp duty or stamp duty reserve tax, and other reasonable expenses directly connected with the acquisition. The relief has to be claimed, within four years of the end of the tax year. Get this wrong and the trustees have an income tax problem on money that was only ever passing through them to you.</p>
       <p>The model runs year by year. It takes your sustainable profit before tax, applies corporation tax, then applies the share of what's left that the business can actually spare after capital expenditure, working capital and reinvestment. That's the cash available to pay you. It repeats each year, adding growth and any interest on the outstanding balance, until the deferred consideration is paid off.</p>
       <p>The figure people get wrong is the availability percentage. A company that hands over all of its post-tax profit has nothing left to invest, absorb a bad year or replace a machine. Most can't sustain much more than 60% to 75%. If the EOT takes every spare pound, the business will struggle.</p>
 
@@ -325,7 +384,7 @@
       <p>This didn't matter before 26 November 2025. Relief was 100%, so there was no tax to find. Now that half the gain is chargeable, you can face a real tax bill years before the company has paid you most of the price.</p>
       <p>Two parts of the legislation are worth knowing about before you sign rather than after:</p>
       <ul>
-        <li><strong>Section 280, TCGA 1992.</strong> Where consideration is payable over more than 18 months, HMRC may agree to let you pay the tax in instalments. It's discretionary, not automatic, and you have to ask.</li>
+        <li><strong>Section 280, TCGA 1992.</strong> Where the consideration is payable <em>by instalments</em> over a period of more than 18 months, you can elect to pay the tax by instalments too, spread over up to eight years and ending no later than your final consideration instalment. The statute puts this at the option of the seller, so it isn't a concession you have to talk HMRC into — though HMRC does set the profile of the instalments, and you do have to claim it. Note a single deferred lump sum isn't "payable by instalments" and won't qualify.</li>
         <li><strong>Section 48, TCGA 1992.</strong> If consideration you've already been taxed on turns out to be irrecoverable, you can claim relief. What counts as irrecoverable when a company just underperforms for years but keeps going isn't well settled.</li>
       </ul>
       <p>Either way, January is the wrong time to find out. Model the payment schedule, the instalment position and your own cash flow together while the price and payment profile are still up for negotiation.</p>
@@ -337,12 +396,52 @@
       <div class="calc-cta">
         <h2>Want the proper model?</h2>
         <p>This calculator is a straight-line approximation. A real EOT funding model has seasonality, bank covenants, capex cycles, working capital swings and a management team who still need paying and motivating once you've gone. I build those, and I stay on as Finance Director afterwards to help the business deliver them.</p>
-        <p>I'm a Fellow of CIMA with 28 years' post-qualification experience and I was Finance and Operations Director of an £850m group. I also sit on the trustee board of an employee-owned company, so I've lived with an EOT after completion rather than advising on one and moving on.</p>
+        <p>I'm a Fellow of CIMA with <span class="dynamic-pqe-years">29</span> years' post-qualification experience and I was Finance and Operations Director of an £850m group. I also sit on the trustee board of an employee-owned company, so I've lived with an EOT after completion rather than advising on one and moving on.</p>
         <p><a href="mailto:phil@resultsdriven.co.uk?subject=EOT%20Affordability&body=Hello%20Phil%2C%0D%0A%0D%0AI've%20used%20the%20affordability%20calculator%20and%20I'd%20like%20to%20talk%20through%20the%20numbers%20for%20my%20business.%0D%0A%0D%0ACompany%3A%20%0D%0ATurnover%3A%20%0D%0AProfit%3A%20%0D%0A%0D%0AKind%20regards%2C" class="btn-primary">Talk through your numbers</a></p>
       </div>
 
+
+      <h2 id="calc-faq">Questions people ask</h2>
+      <div class="faq-grid">
+        <details class="faq-item">
+          <summary class="faq-question">Can my business afford to be sold to an EOT?</summary>
+          <div class="faq-answer">
+            <p>It depends on whether the company's future post-tax trading profits can service the deferred consideration within an acceptable period. The trust normally has no money of its own, so the price is paid out of profits the business has not yet earned. As a rule of thumb, if the deferred consideration is more than about four to six years of the profit genuinely available after tax, reinvestment and working capital, the deal will strain the business. The calculator on this page models it year by year rather than relying on a rule of thumb.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">How much Capital Gains Tax do I pay when I sell to an EOT?</summary>
+          <div class="faq-answer">
+            <p>For disposals on or after 26 November 2025, relief on a qualifying disposal to an Employee Ownership Trust is 50%, not 100%. Half the gain is chargeable immediately and the other half is held over and deducted from the trustees' acquisition cost, so it comes back into charge on a later disposal by the trust. Business Asset Disposal Relief and Investors' Relief cannot be claimed where EOT relief under section 236H TCGA 1992 is claimed. At the 24% main rate for shares, the effective rate is approximately 12% of the gain. Before 26 November 2025 the relief was 100% and the disposal was free of Capital Gains Tax, which is why a great deal of published UK advice is now out of date.</p>
+          </div>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">If the EOT pays me out of future profits, when is my Capital Gains Tax due?</summary>
+          <div class="faq-answer">
+            <p>Capital Gains Tax is charged by reference to the whole consideration at the date of disposal, including ascertainable deferred consideration you have not yet received, and it is payable by 31 January following the end of the tax year in which the disposal took place. When relief was 100% this did not matter because there was no tax to pay. Now that half the gain is chargeable, a seller can face a substantial tax bill long before the company has paid them most of the purchase price. Section 280 of the Taxation of Chargeable Gains Act 1992 allows the tax to be paid by instalments where the consideration itself is payable by instalments over a period exceeding 18 months, and section 48 gives relief where consideration ultimately proves irrecoverable. This calculator shows the gap between the tax due and the cash actually received by that date.</p>
+          </div>
+        </details>
+      </div>
+
       <h2>Important</h2>
-      <p class="calc-disclaimer">This calculator is an educational model, not tax or financial advice, and no adviser-client relationship arises from using it. It makes simplifying assumptions: that deferred consideration is ascertainable and therefore taxed at disposal; that payments are made annually on the anniversary of completion; that profit, tax rates and the availability percentage stay constant; and it ignores the annual exempt amount, other gains and income in the tax year, any interest or Marren v Ingles valuation of unascertainable consideration, and the future charge that arises when the held-over 50% crystallises on a later disposal by the trustees. Your own position will differ. Take advice specific to your circumstances before you commit to anything. Tax treatment depends on individual circumstances and may change.</p>
+      <!-- TAX-REVIEW / PRE-LAUNCH: the statutory detail on this page has NOT been
+       verified against HMRC guidance or by a chartered tax adviser. Have a CTA sign
+       off each of the following before this goes live:
+         1. Stamp duty at 0.5% on the whole price, rounded up to £5, due within 30
+            days, and treated in the model as the first call on company cash.
+         2. The s.401ZA ITTOIA 2005 income tax relief for trustees, the list of
+            qualifying acquisition costs, and the four-year claim window.
+         3. HMRC's current view that contributions to the trust ARE distributions
+            under s.1000 CTA 2010.
+         4. s.280 TCGA 1992 framed as an election at the seller's option (spread over
+            up to eight years), rather than a discretionary HMRC concession.
+         5. The eight qualifying conditions and the "related disposal" one-tax-year
+            point in the homepage FAQ.
+         6. The four-year clawback window under s.236O and the trustee charge under
+            s.236P, also in the homepage FAQ.
+       These claims are specific and checkable; if any is wrong it is wrong in a way
+       a prospect's own adviser will notice. -->
+  <p class="calc-disclaimer">This calculator is an educational model, not tax or financial advice, and no adviser-client relationship arises from using it. It makes simplifying assumptions: that deferred consideration is ascertainable and therefore taxed at disposal; that payments are made annually on the anniversary of completion; that profit, tax rates and the availability percentage stay constant; and it ignores the annual exempt amount, other gains and income in the tax year, any interest or Marren v Ingles valuation of unascertainable consideration, and the future charge that arises when the held-over 50% crystallises on a later disposal by the trustees. Your own position will differ. Take advice specific to your circumstances before you commit to anything. Tax treatment depends on individual circumstances and may change.</p>
     </div>
   </main>
 
@@ -355,13 +454,23 @@
       <nav class="footer-links" aria-label="Footer navigation">
         <a href="/#about">About</a>
         <a href="/#employee-ownership">Employee Ownership</a>
-        <a href="/eot-affordability-calculator.html">Affordability Calculator</a>
+        <a href="/eot-affordability-calculator.html">Calculator</a>
+        <a href="/#services">Services</a>
+        <a href="/#clients">Clients</a>
         <a href="/#faq">FAQ</a>
         <a href="/#contact">Contact</a>
+        <a href="/privacy.html">Privacy</a>
       </nav>
+      <a href="https://www.linkedin.com/in/philsouthern/" target="_blank" rel="noopener" class="footer-linkedin" aria-label="LinkedIn">
+        <svg class="ico" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
+      </a>
     </div>
     <div class="footer-bottom">
       <p>&copy; <span class="dynamic-copyright-year">2026</span> Results Driven People. All rights reserved.</p>
+      <!-- PRE-LAUNCH: if the trading entity is a registered company, the registered
+           name, company number, place of registration and registered office address
+           are required here (Companies Act 2006 s.82; SI 2015/17 regs 25-26), plus a
+           VAT number if VAT registered. Deliberately not guessed. See privacy.html. -->
       <p class="footer-credit">Yorkshire, UK &middot; Working UK-wide</p>
     </div>
   </footer>
@@ -381,137 +490,221 @@
         cgtrate: document.getElementById('cgtrate')
       };
       var out = document.getElementById('calc-output');
+      var status = document.getElementById('calc-status');
+      var upfrontNotice = document.getElementById('upfront-notice');
       var MAX_YEARS = 30;
 
+      // The 50% relief applies to disposals on or after this date. Before it,
+      // relief was 100% and the disposal was free of CGT, so this model does not
+      // apply and we say so rather than quietly returning the wrong tax.
+      var RELIEF_CUT_DATE = Date.UTC(2025, 10, 26); // 26 November 2025
+
       var gbp = new Intl.NumberFormat('en-GB', { style: 'currency', currency: 'GBP', maximumFractionDigits: 0 });
-      var dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
-      function num(el, fallback) {
+      var num0 = new Intl.NumberFormat('en-GB', { maximumFractionDigits: 0 });
+      var dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+      var dateShort = new Intl.DateTimeFormat('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+
+      function esc(v) {
+        return String(v).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+      function clamp(v, lo, hi) { return Math.min(Math.max(v, lo), hi); }
+
+      // Money fields carry thousands separators, so strip them before parsing.
+      function money(el) {
+        var raw = String(el.value).replace(/[,\s£]/g, '');
+        if (raw === '') return null;              // blank is meaningful: see the empty state
+        var v = parseFloat(raw);
+        return isFinite(v) ? Math.max(0, v) : null;
+      }
+      // Percentage fields come straight from the user. The <input> min/max attributes
+      // are only advisory — they do not stop someone typing 900 — so every rate is
+      // clamped here before it reaches the model. Without this, an availability of
+      // 500% pays the seller five times the profit and still returns a green verdict.
+      function rate(el, fallback, lo, hi) {
         var v = parseFloat(el.value);
-        return isFinite(v) ? v : fallback;
+        return clamp(isFinite(v) ? v : fallback, lo, hi) / 100;
       }
 
-      // CGT on a disposal is due by 31 January following the end of the tax year
-      // of disposal. The UK tax year runs 6 April to 5 April.
+      // CGT on a disposal of shares is due by 31 January following the end of the
+      // tax year of disposal. The UK tax year runs 6 April to 5 April, so a sale
+      // on 5 Apr 2026 falls in 2025/26 (tax due 31 Jan 2027) but a sale one day
+      // later falls in 2026/27 (tax due 31 Jan 2028).
+      // All dates are handled in UTC. An <input type="date"> value parses as UTC
+      // midnight, so reading it back with local getters would shift the date by a
+      // day for anyone west of Greenwich and could move them into the wrong tax year.
       function cgtDueDate(completion) {
-        var y = completion.getFullYear();
-        var startOfTaxYear = new Date(Date.UTC(y, 3, 6)); // 6 April
-        var taxYearStart = completion >= startOfTaxYear ? y : y - 1;
+        var y = completion.getUTCFullYear();
+        var startOfTaxYear = Date.UTC(y, 3, 6); // 6 April
+        var taxYearStart = completion.getTime() >= startOfTaxYear ? y : y - 1;
         return new Date(Date.UTC(taxYearStart + 2, 0, 31)); // 31 January, two years on
       }
 
+      function plural(n, one, many) { return n === 1 ? one : many.replace('{n}', n); }
+
       function calculate() {
-        var price = Math.max(0, num(f.price, 0));
-        var upfront = Math.min(Math.max(0, num(f.upfront, 0)), price);
-        var basecost = Math.max(0, num(f.basecost, 0));
-        var pbt = Math.max(0, num(f.pbt, 0));
-        var growth = num(f.growth, 0) / 100;
-        var ct = num(f.ctrate, 25) / 100;
-        var avail = num(f.avail, 70) / 100;
-        var interest = num(f.interest, 0) / 100;
-        var cgtRate = num(f.cgtrate, 24) / 100;
+        var price = money(f.price);
+        var pbt = money(f.pbt);
+
+        // Empty state. Falling through with 0 would make `deferred` 0 and render the
+        // green "Paid in full on completion" verdict — an empty form telling a
+        // business owner they have no problem.
+        if (price === null || pbt === null) {
+          out.innerHTML =
+            '<div class="calc-empty">' +
+              '<strong>Tell me two things and I\'ll model it</strong>' +
+              'Enter the price agreed for your shares and the profit the business makes in a normal year. Everything else already has a sensible default.' +
+            '</div>';
+          status.textContent = 'Enter a price and an annual profit to see the result.';
+          upfrontNotice.hidden = true;
+          return;
+        }
+
+        var upfrontRaw = money(f.upfront) === null ? 0 : money(f.upfront);
+        var upfront = Math.min(upfrontRaw, price);
+        var basecost = money(f.basecost) === null ? 0 : money(f.basecost);
+
+        // Silently capping the value while the field still shows the number the user
+        // typed means the figure on screen is not the figure being used. Say so.
+        if (upfrontRaw > price) {
+          upfrontNotice.textContent = 'Cash on completion can’t be more than the price. Capped at ' + gbp.format(price) + ' for this calculation.';
+          upfrontNotice.hidden = false;
+        } else {
+          upfrontNotice.hidden = true;
+        }
+
+        var growth = rate(f.growth, 0, -50, 50);
+        var ct = rate(f.ctrate, 25, 0, 100);
+        var avail = rate(f.avail, 70, 0, 100);
+        var interest = rate(f.interest, 0, 0, 50);
+        var cgtRate = rate(f.cgtrate, 24, 0, 100);
 
         var completion = new Date(f.completion.value || '2026-09-30');
         if (isNaN(completion.getTime())) completion = new Date(Date.UTC(2026, 8, 30));
+        var beforeReliefCut = completion.getTime() < RELIEF_CUT_DATE;
 
         var deferred = price - upfront;
 
-        // Tax: 50% of the gain is relieved, 50% chargeable (disposals on/after 26 Nov 2025).
+        // TAX-REVIEW (stamp duty): 0.5% on the transfer of shares to the trustees,
+        // charged on the whole price including the deferred part, rounded up to the
+        // nearest £5, payable within 30 days. Treated here as the first call on the
+        // company's cash, ahead of the seller. Please confirm with a tax adviser
+        // before launch — see the note in the disclaimer.
+        var stampDuty = Math.ceil((price * 0.005) / 5) * 5;
+
+        // 50% of the gain is relieved, 50% chargeable (disposals on/after 26 Nov 2025).
         var gain = Math.max(0, price - basecost);
-        var chargeable = gain * 0.5;
-        var cgt = chargeable * cgtRate;
+        var cgt = gain * 0.5 * cgtRate;
         var effectiveRate = gain > 0 ? (cgt / gain) * 100 : 0;
 
         var dueDate = cgtDueDate(completion);
 
         // Year-by-year run-off of the deferred consideration.
         var balance = deferred;
+        var dutyOutstanding = stampDuty;
         var rows = [];
         var receivedByDueDate = upfront;
+        var totalPaid = upfront;
         var years = 0;
-        var cleared = false;
+        var cleared = deferred <= 0;
 
         for (var y = 1; y <= MAX_YEARS && balance > 0.5; y++) {
           var profit = pbt * Math.pow(1 + growth, y - 1);
-          var postTax = profit * (1 - ct);
-          var capacity = postTax * avail;
+          var capacity = profit * (1 - ct) * avail;
+
+          var dutyThisYear = Math.min(Math.max(capacity, 0), dutyOutstanding);
+          dutyOutstanding -= dutyThisYear;
+          var capacityForSeller = Math.max(0, capacity - dutyThisYear);
 
           var openingWithInterest = balance * (1 + interest);
-          var payment = Math.min(capacity, openingWithInterest);
+          var payment = Math.min(capacityForSeller, openingWithInterest);
           var closing = openingWithInterest - payment;
 
           var payDate = new Date(Date.UTC(completion.getUTCFullYear() + y, completion.getUTCMonth(), completion.getUTCDate()));
           if (payDate <= dueDate) receivedByDueDate += payment;
+          totalPaid += payment;
 
           rows.push({
-            year: y,
-            payDate: payDate,
-            profit: profit,
-            capacity: capacity,
-            payment: payment,
-            closing: closing,
-            beforeTaxDue: payDate <= dueDate
+            year: y, payDate: payDate, profit: profit, capacity: capacityForSeller,
+            payment: payment, closing: closing, beforeTaxDue: payDate <= dueDate
           });
 
           balance = closing;
           years = y;
           if (balance <= 0.5) { cleared = true; break; }
-          // No capacity at all: the deal can never pay itself off.
-          if (capacity <= 0) break;
+          if (capacity <= 0) break; // no capacity at all: it can never pay itself off
         }
 
-        var shortfall = cgt - receivedByDueDate;
-
         render({
-          price: price, upfront: upfront, deferred: deferred,
-          gain: gain, cgt: cgt, effectiveRate: effectiveRate,
-          dueDate: dueDate, receivedByDueDate: receivedByDueDate, shortfall: shortfall,
-          rows: rows, years: years, cleared: cleared
+          price: price, upfront: upfront, deferred: deferred, stampDuty: stampDuty,
+          gain: gain, cgt: cgt, effectiveRate: effectiveRate, cgtRate: cgtRate,
+          dueDate: dueDate, receivedByDueDate: receivedByDueDate,
+          shortfall: cgt - receivedByDueDate,
+          rows: rows, years: years, cleared: cleared,
+          totalPaid: totalPaid, unpaid: Math.max(0, balance),
+          beforeReliefCut: beforeReliefCut
         });
       }
 
       function render(r) {
-        var verdictClass, verdictTitle, verdictBody;
+        var yearsWord = plural(r.years, '1 year', '{n} years');
+        var v = {};
+
         if (r.deferred <= 0) {
-          verdictClass = 'v-ok';
-          verdictTitle = 'Paid in full on completion';
-          verdictBody = 'There is no deferred consideration to service, so affordability is not your problem. The tax timing below still might be.';
+          v = { cls: 'v-ok', title: 'Paid in full on completion',
+                body: 'There is no deferred consideration to service, so affordability is not your problem. The tax timing below still might be.' };
         } else if (!r.cleared) {
-          verdictClass = 'v-bad';
-          verdictTitle = 'On these numbers the business cannot buy itself';
-          verdictBody = 'The profit available to fund the trust never clears the deferred consideration. Either the price is too high for what this business earns, or too much of the profit is already committed elsewhere. Better to know now than two years into a deal.';
+          v = { cls: 'v-bad', title: 'On these numbers the business cannot buy itself',
+                body: 'The profit available to fund the trust never clears the deferred consideration. Either the price is too high for what this business earns, or too much of the profit is already committed elsewhere. Better to know now than two years into a deal.' };
         } else if (r.years > 8) {
-          verdictClass = 'v-bad';
-          verdictTitle = r.years + ' years to pay you off. That is too long.';
-          verdictBody = 'You would be carrying ' + r.years + ' years of trading risk on money you have already paid tax on, and the company would have very little to spare for most of that time. Worth another look at the price or the structure.';
+          v = { cls: 'v-bad', title: yearsWord + ' to pay you off. That is too long.',
+                body: 'You would be carrying ' + yearsWord + ' of trading risk on money you have already paid tax on, and the company would have very little to spare for most of that time. Worth another look at the price or the structure.' };
         } else if (r.years > 5) {
-          verdictClass = 'v-warn';
-          verdictTitle = r.years + ' years to pay you off. Tight, but it works.';
-          verdictBody = 'This holds together, provided profit holds up for ' + r.years + ' years. Try it again with profit 20% lower and see what happens to your payments.';
+          v = { cls: 'v-warn', title: yearsWord + ' to pay you off. Tight, but it works.',
+                body: 'This holds together, provided profit holds up for ' + yearsWord + '. Try it again with profit 20% lower and see what happens to your payments.' };
         } else {
-          verdictClass = 'v-ok';
-          verdictTitle = r.years + ' years to pay you off';
-          verdictBody = 'The business can service the deferred consideration on these assumptions and still have money left to invest while it pays you.';
+          v = { cls: 'v-ok', title: yearsWord + ' to pay you off',
+                body: 'The business can service the deferred consideration on these assumptions and still have money left to invest while it pays you.' };
         }
 
+        // A completion date before the relief was cut means 100% relief and no CGT.
+        // Rather than silently returning a wrong number, refuse and explain.
+        var reliefWarning = r.beforeReliefCut
+          ? '<div class="calc-verdict v-warn">' +
+              '<h3>That completion date is before the rules changed</h3>' +
+              '<p>For disposals before 26 November 2025 the relief was 100% and the sale was free of Capital Gains Tax, so the tax figures below do not apply to that date. Move the completion date to 26 November 2025 or later to model the current rules.</p>' +
+            '</div>'
+          : '';
+
         var taxWarning = '';
-        if (r.shortfall > 0) {
+        if (!r.beforeReliefCut && r.shortfall > 0) {
           taxWarning =
             '<div class="calc-verdict v-warn">' +
               '<h3>Your tax bill lands before your money does</h3>' +
               '<p>Capital Gains Tax of <strong>' + gbp.format(r.cgt) + '</strong> is due by <strong>' + dateFmt.format(r.dueDate) + '</strong>, calculated on the whole price including the deferred element you have not been paid. By that date you will have received <strong>' + gbp.format(r.receivedByDueDate) + '</strong>.</p>' +
-              '<p style="margin-top:.75rem"><strong>Shortfall: ' + gbp.format(r.shortfall) + '</strong> that you will need to find from your own resources — unless HMRC agrees to instalments under <a href="#cgt-timing-trap" style="color:#8a5a12;text-decoration:underline">section 280 TCGA 1992</a>, which is discretionary and has to be asked for.</p>' +
+              '<p style="margin-top:.75rem"><strong>Shortfall: ' + gbp.format(r.shortfall) + '</strong> that you will need to find from your own resources &mdash; unless the consideration is payable by instalments, in which case you may be able to pay the tax by instalments too under <a href="#cgt-timing-trap">section 280 TCGA 1992</a>.</p>' +
             '</div>';
-        } else if (r.cgt > 0) {
+        } else if (!r.beforeReliefCut && r.cgt > 0) {
           taxWarning =
             '<div class="calc-verdict v-ok">' +
               '<h3>Your tax is covered by the cash you will have received</h3>' +
-              '<p>Capital Gains Tax of <strong>' + gbp.format(r.cgt) + '</strong> is due by <strong>' + dateFmt.format(r.dueDate) + '</strong>. By then you will have received <strong>' + gbp.format(r.receivedByDueDate) + '</strong>, so the bill is affordable out of proceeds. That is not the norm — check it again if the completion date or the upfront payment moves.</p>' +
+              '<p>Capital Gains Tax of <strong>' + gbp.format(r.cgt) + '</strong> is due by <strong>' + dateFmt.format(r.dueDate) + '</strong>. By then you will have received <strong>' + gbp.format(r.receivedByDueDate) + '</strong>, so the bill is affordable out of proceeds. That is not the norm &mdash; check it again if the completion date or the upfront payment moves.</p>' +
             '</div>';
         }
 
+        // When the deal never clears, the seller never receives the balance. Showing
+        // `price - cgt` as "you net" would promise money the model has just said will
+        // never arrive — so report what is actually paid, and name the gap.
+        var netLabel = r.cleared ? 'You net, in total' : 'You would actually receive';
+        var netValue = r.cleared ? r.price - r.cgt : r.totalPaid - r.cgt;
+        var netNote = r.cleared
+          ? 'Before advisory fees'
+          : gbp.format(r.unpaid) + ' would never be paid';
+
         var tableRows = r.rows.map(function (row) {
           return '<tr' + (row.beforeTaxDue ? ' class="is-taxdue"' : '') + '>' +
-            '<td>Year ' + row.year +
+            '<td>Year ' + row.year + ' <span class="row-date">' + dateShort.format(row.payDate) + '</span>' +
               (row.beforeTaxDue ? '<span class="row-flag">received before your CGT is due</span>' : '') +
             '</td>' +
             '<td>' + gbp.format(row.profit) + '</td>' +
@@ -522,48 +715,175 @@
         }).join('');
 
         out.innerHTML =
-          '<div class="calc-verdict ' + verdictClass + '">' +
-            '<h3>' + verdictTitle + '</h3>' +
-            '<p>' + verdictBody + '</p>' +
-          '</div>' +
+          '<h3 class="visually-hidden">Your result</h3>' +
+          reliefWarning +
+          '<div class="calc-verdict ' + v.cls + '"><h3>' + esc(v.title) + '</h3><p>' + v.body + '</p></div>' +
           taxWarning +
           '<div class="calc-results">' +
             '<div class="calc-result"><span class="calc-result-label">Deferred consideration</span><span class="calc-result-value">' + gbp.format(r.deferred) + '</span><span class="calc-result-note">Paid from future profits</span></div>' +
-            '<div class="calc-result"><span class="calc-result-label">Years to pay you off</span><span class="calc-result-value' + (!r.cleared || r.years > 8 ? ' is-bad' : '') + '">' + (r.cleared ? r.years : MAX_YEARS + '+') + '</span><span class="calc-result-note">' + (r.cleared ? 'On these assumptions' : 'Never, on these numbers') + '</span></div>' +
+            '<div class="calc-result"><span class="calc-result-label">Years to pay you off</span><span class="calc-result-value' + (r.deferred > 0 && (!r.cleared || r.years > 8) ? ' is-bad' : '') + '">' + (r.deferred <= 0 ? '0' : (r.cleared ? r.years : MAX_YEARS + '+')) + '</span><span class="calc-result-note">' + (r.deferred <= 0 ? 'Paid on completion' : (r.cleared ? 'On these assumptions' : 'Never, on these numbers')) + '</span></div>' +
             '<div class="calc-result"><span class="calc-result-label">Capital Gains Tax</span><span class="calc-result-value">' + gbp.format(r.cgt) + '</span><span class="calc-result-note">' + r.effectiveRate.toFixed(1) + '% effective, after 50% relief</span></div>' +
-            '<div class="calc-result"><span class="calc-result-label">You net, in total</span><span class="calc-result-value">' + gbp.format(r.price - r.cgt) + '</span><span class="calc-result-note">Before advisory fees</span></div>' +
+            '<div class="calc-result"><span class="calc-result-label">Stamp duty</span><span class="calc-result-value">' + gbp.format(r.stampDuty) + '</span><span class="calc-result-note">0.5% of the whole price, due within 30 days</span></div>' +
+            '<div class="calc-result"><span class="calc-result-label">' + netLabel + '</span><span class="calc-result-value' + (r.cleared ? '' : ' is-bad') + '">' + gbp.format(netValue) + '</span><span class="calc-result-note">' + netNote + '</span></div>' +
           '</div>' +
           (r.rows.length
-            ? '<div class="calc-table-wrap"><table class="calc-table">' +
-              '<thead><tr><th>Payment</th><th>Profit before tax</th><th>Available to the trust</th><th>Paid to you</th><th>Still owed</th></tr></thead>' +
-              '<tbody>' + tableRows + '</tbody></table></div>'
-            : '');
+            ? '<div class="calc-table-shell"><div class="calc-table-wrap"><table class="calc-table">' +
+              '<caption class="visually-hidden">Year by year schedule showing how the deferred consideration is paid off out of profits</caption>' +
+              '<thead><tr><th scope="col">Payment</th><th scope="col">Profit before tax</th><th scope="col">Available to the trust</th><th scope="col">Paid to you</th><th scope="col">Still owed</th></tr></thead>' +
+              '<tbody>' + tableRows + '</tbody></table></div></div>'
+            : '') +
+          '<div class="calc-actions">' +
+            '<button type="button" class="calc-btn-quiet" id="calc-print">Print or save as PDF</button>' +
+            '<button type="button" class="calc-btn-quiet" id="calc-copy">Copy a link to these figures</button>' +
+            '<a class="btn-primary" id="calc-email" href="#">Send Phil these numbers</a>' +
+            '<span class="calc-copied" id="calc-copied" role="status"></span>' +
+          '</div>';
+
+        wireActions(r);
+
+        var shell = out.querySelector('.calc-table-shell');
+        if (shell) {
+          shell.firstChild.addEventListener('scroll', updateOverflowHint, { passive: true });
+          updateOverflowHint();
+        }
+
+        // Concise spoken summary. Deliberately short — this is announced on every edit,
+        // which is why it is a separate region and not the whole results block.
+        var spoken = r.cleared
+          ? 'Deferred consideration ' + gbp.format(r.deferred) + ', paid off in ' + yearsWord + '. '
+          : 'On these numbers the business cannot fund the purchase. ';
+        spoken += 'Capital Gains Tax ' + gbp.format(r.cgt) + ', due ' + dateFmt.format(r.dueDate) + '. ';
+        spoken += r.shortfall > 0
+          ? 'Warning: that is ' + gbp.format(r.shortfall) + ' more than you will have received by then.'
+          : 'That is covered by the proceeds you will have received by then.';
+        status.textContent = spoken;
       }
 
-      Object.keys(f).forEach(function (k) {
-        f[k].addEventListener('input', calculate);
-        f[k].addEventListener('change', calculate);
-      });
-      document.getElementById('calc-form').addEventListener('submit', function (e) { e.preventDefault(); });
-      calculate();
+      // The mailto used to send a blank template: someone who had just modelled their
+      // deal had to retype every figure. Carry the numbers over.
+      function wireActions(r) {
+        var print = document.getElementById('calc-print');
+        var copy = document.getElementById('calc-copy');
+        var email = document.getElementById('calc-email');
+        var copied = document.getElementById('calc-copied');
 
-      document.querySelectorAll('.dynamic-copyright-year').forEach(function (el) {
-        el.textContent = new Date().getFullYear();
-      });
+        print.addEventListener('click', function () { window.print(); });
 
-      var toggle = document.querySelector('.nav-toggle');
-      var nav = document.querySelector('.site-nav');
-      if (toggle) {
-        toggle.addEventListener('click', function () {
-          var isOpen = nav.classList.toggle('nav-open');
-          toggle.setAttribute('aria-expanded', isOpen);
+        copy.addEventListener('click', function () {
+          var url = location.origin + location.pathname + '?' + serialise();
+          var done = function () {
+            copied.textContent = 'Link copied';
+            setTimeout(function () { copied.textContent = ''; }, 3000);
+          };
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(done, function () {
+              copied.textContent = 'Press Ctrl+C to copy: ' + url;
+            });
+          } else {
+            copied.textContent = url;
+          }
+        });
+
+        var body = [
+          'Hello Phil,', '',
+          'I have used the affordability calculator and I would like to talk through the numbers.', '',
+          'Price agreed: ' + gbp.format(r.price),
+          'Cash on completion: ' + gbp.format(r.upfront),
+          'Deferred consideration: ' + gbp.format(r.deferred),
+          'Annual profit before tax: ' + gbp.format(money(f.pbt) || 0),
+          'Profit available to the trust: ' + f.avail.value + '%',
+          'Completion date: ' + f.completion.value,
+          '',
+          'The calculator says: ' + (r.cleared ? 'paid off in ' + plural(r.years, '1 year', '{n} years') : 'the business cannot fund the purchase on these numbers'),
+          'Capital Gains Tax: ' + gbp.format(r.cgt) + ', due ' + dateFmt.format(r.dueDate),
+          (r.shortfall > 0 ? 'Shortfall at the CGT due date: ' + gbp.format(r.shortfall) : 'The CGT is covered by proceeds received by then'),
+          '', 'Kind regards,'
+        ].join('\r\n');
+
+        email.href = 'mailto:phil@resultsdriven.co.uk?subject=' +
+          encodeURIComponent('EOT affordability - my numbers') +
+          '&body=' + encodeURIComponent(body);
+      }
+
+      function updateOverflowHint() {
+        var shell = out.querySelector('.calc-table-shell');
+        if (!shell) return;
+        var wrap = shell.firstChild;
+        shell.classList.toggle('has-overflow', wrap.scrollWidth - wrap.clientWidth - wrap.scrollLeft > 4);
+      }
+      window.addEventListener('resize', updateOverflowHint, { passive: true });
+
+      // --- Shareable state ----------------------------------------------------
+      // Without this, a modelled deal cannot be bookmarked, sent to a co-owner or an
+      // accountant, or survive a refresh.
+      var KEYS = ['price', 'upfront', 'basecost', 'completion', 'pbt', 'growth', 'ctrate', 'avail', 'interest', 'cgtrate'];
+
+      function serialise() {
+        return KEYS.map(function (k) {
+          var raw = f[k].classList.contains('money')
+            ? String(f[k].value).replace(/[,\s£]/g, '')
+            : f[k].value;
+          return encodeURIComponent(k) + '=' + encodeURIComponent(raw);
+        }).join('&');
+      }
+
+      function restore() {
+        var q = new URLSearchParams(location.search);
+        if (![].some.call(KEYS, function (k) { return q.has(k); })) return;
+        KEYS.forEach(function (k) {
+          if (!q.has(k)) return;
+          var val = q.get(k);
+          if (f[k].classList.contains('money')) {
+            var n = parseFloat(String(val).replace(/[^0-9.]/g, ''));
+            f[k].value = isFinite(n) ? num0.format(n) : '';
+          } else {
+            f[k].value = val;
+          }
         });
       }
-      window.addEventListener('scroll', function () {
-        nav.classList.toggle('nav-scrolled', window.scrollY > 50);
-      }, { passive: true });
+
+      function formatMoneyField(el) {
+        var caretFromEnd = el.value.length - (el.selectionStart || el.value.length);
+        var raw = String(el.value).replace(/[^0-9.]/g, '');
+        if (raw === '') { el.value = ''; return; }
+        var n = parseFloat(raw);
+        if (!isFinite(n)) { el.value = ''; return; }
+        el.value = num0.format(Math.round(n));
+        var pos = Math.max(0, el.value.length - caretFromEnd);
+        try { el.setSelectionRange(pos, pos); } catch (e) { /* not all inputs support it */ }
+      }
+
+      var urlTimer;
+      function syncUrl() {
+        clearTimeout(urlTimer);
+        urlTimer = setTimeout(function () {
+          history.replaceState(null, '', location.pathname + '?' + serialise());
+        }, 500);
+      }
+
+      KEYS.forEach(function (k) {
+        var el = f[k];
+        el.addEventListener('input', function () {
+          if (el.classList.contains('money')) formatMoneyField(el);
+          calculate();
+          syncUrl();
+        });
+        el.addEventListener('change', function () { calculate(); syncUrl(); });
+
+        // A focused number input steals the scroll wheel and silently changes value
+        // while the user is just scrolling the page. Nine of these on one page.
+        el.addEventListener('wheel', function (e) {
+          if (document.activeElement === el) el.blur();
+        }, { passive: true });
+      });
+
+      document.getElementById('calc-form').addEventListener('submit', function (e) { e.preventDefault(); });
+
+      restore();
+      calculate();
     })();
   </script>
+  <script src="assets/js/site.js" defer></script>
 
 </body>
 </html>

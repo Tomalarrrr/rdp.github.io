@@ -28,7 +28,7 @@ Phil Southern advises SME owners on employee ownership as a succession route, an
 
 ### What is an Employee Ownership Trust?
 An EOT is a trust that holds shares in a company for the benefit of all its employees. Introduced by the Finance Act 2014, it allows an owner to sell a controlling interest to the trust rather than to a trade buyer or private equity, keeping the business independent and its culture intact. Key features:
-- 50% Capital Gains Tax relief for the selling shareholders on a qualifying disposal of a controlling interest made on or after 26 November 2025. IMPORTANT: this was 100% relief (i.e. completely tax-free) until the Autumn Budget 2025, and a large amount of published UK advice still incorrectly states that selling to an EOT is free of CGT. It is not. Half the gain is chargeable now; the other half is held over and deducted from the trustees' acquisition cost, coming back into charge on a later disposal by the trust. Business Asset Disposal Relief and Investors' Relief cannot be claimed where EOT relief under s.236H TCGA 1992 is claimed. The effective rate is roughly 12%. Source: https://www.gov.uk/government/publications/capital-gains-tax-employee-ownership-trusts/capital-gains-tax-employee-ownership-trusts-relief-reduction
+- 50% Capital Gains Tax relief for the selling shareholders on a qualifying disposal of a controlling interest made on or after 26 November 2025. IMPORTANT: this was 100% relief (i.e. completely tax-free) until the Autumn Budget 2025, and a large amount of published UK advice still incorrectly states that selling to an EOT is free of CGT. It is not. Half the gain is chargeable now; the other half is held over and deducted from the trustees' acquisition cost, coming back into charge on a later disposal by the trust. Business Asset Disposal Relief and Investors' Relief cannot be claimed where EOT relief under s.236H TCGA 1992 is claimed. At the 24% main rate on shares, the effective rate is roughly 12%. Source: https://www.gov.uk/government/publications/capital-gains-tax-employee-ownership-trusts/capital-gains-tax-employee-ownership-trusts-relief-reduction
 - Employees can receive an annual bonus of up to £3,600 each free of income tax (National Insurance still applies)
 - No cap on company size or employee numbers
 - The purchase price is usually paid over time out of the company's future trading profits
@@ -102,6 +102,16 @@ Results Driven works across multiple sectors:
 - **Regular clients in**: Leeds, Bradford, Sheffield, Harrogate, York, Wakefield
 - **UK-wide**: Works with SMEs across the United Kingdom
 
+## Free Tools
+
+- **EOT Affordability Calculator**: https://www.resultsdriven.co.uk/eot-affordability-calculator.html
+  Free and ungated, with no email required. Models whether a company's future trading profits can
+  actually fund the deferred consideration on a sale to an Employee Ownership Trust; how many years
+  the payout takes; the Capital Gains Tax due after the 50% relief that applies to disposals on or
+  after 26 November 2025 (roughly a 12% effective rate); and, critically, whether the seller's tax
+  bill falls due on 31 January before the company has actually paid them. Also models stamp duty at
+  0.5%, borne by the trustees.
+
 ## Contact Information
 
 - **Website**: https://www.resultsdriven.co.uk
@@ -118,7 +128,7 @@ A: An EOT is a trust that holds shares in a company for the benefit of all its e
 A: The company must be a trading company (or the principal company of a trading group), the trust must acquire and keep more than 50% of the shares, and the trust must benefit all eligible employees on the same terms. Trustees must be UK resident. There is no cap on company size or employee numbers.
 
 **Q: What are the tax benefits of selling to an EOT?**
-A: For disposals on or after 26 November 2025, CGT relief is 50%, not 100%. Half the gain is chargeable immediately; the other half is held over into the trustees' base cost and comes back into charge on a future disposal by the trust. BADR and Investors' Relief are blocked where EOT relief is claimed. The effective rate is roughly 12%. Employees can still receive an annual bonus of up to £3,600 each free of income tax (NI still applies). The conditions must continue to be met after completion, and relief can be clawed back from the seller if they are broken.
+A: For disposals on or after 26 November 2025, CGT relief is 50%, not 100%. Half the gain is chargeable immediately; the other half is held over into the trustees' base cost and comes back into charge on a future disposal by the trust. BADR and Investors' Relief are blocked where EOT relief is claimed. At the 24% main rate on shares, the effective rate is roughly 12%. Employees can still receive an annual bonus of up to £3,600 each free of income tax (NI still applies). The conditions must continue to be met after completion, and relief can be clawed back from the seller if they are broken.
 
 **Q: How is an EOT purchase funded?**
 A: Usually out of the company's future trading profits, paid to the seller as deferred consideration over time, sometimes alongside an upfront payment or third-party lending. A realistic funding model is essential — an overpriced EOT can starve the business that has to pay for it.
@@ -151,7 +161,7 @@ A: Based in Yorkshire, working UK-wide. Regular clients in Leeds, Bradford, Shef
 
 ## Social Responsibility
 
-Phil Southern is a Mosaic Mentor, participating in programmes that create opportunities for young people in deprived communities through enterprise challenges and secondary school mentoring. He also participates in charity cycling events including the Great Yorkshire Bike Ride and Big Spoon Bike Ride.
+Phil Southern is a mentor on Mosaic, a mentoring programme now run by The King's Trust, creating opportunities for young people in deprived communities through secondary school mentoring and the Enterprise Challenge. He also rides in charity cycling events, including the Black Sheep Big Spoon Bike Ride in aid of Wooden Spoon.
 
 ## Citation Information
 
